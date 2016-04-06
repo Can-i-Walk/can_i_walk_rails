@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TripTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "trips exist" do
+    assert Trip
+  end
 end

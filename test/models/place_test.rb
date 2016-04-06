@@ -11,6 +11,4 @@ class PlaceTest < ActiveSupport::TestCase
     place.trip_points << starting_point
     assert_equal "Starting Point", place.trip_points.first.place_type
   end
-
-  
 end
