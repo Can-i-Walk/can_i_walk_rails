@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 
+gem 'delayed_job_active_record'
+gem 'daemon'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'bcrypt', '~>3.1.7'
 gem 'puma'
