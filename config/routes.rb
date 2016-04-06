@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'places#index' 
   resources :ratings, except: [:new, :edit]
   resources :places, except: [:new, :edit]
   resources :trips, except: [:new, :edit]
