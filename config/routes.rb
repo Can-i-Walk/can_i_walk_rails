@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :ratings
-  resources :places
-  resources :trips
-  resources :users
+  resources :ratings, except: [:new, :edit]
+  resources :places, except: [:new, :edit]
+  resources :trips, except: [:new, :edit]
+  resources :users, except: [:index, :new, :edit]
   get 'reset_password' => 'users#reset_password', as: 'reset_password'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

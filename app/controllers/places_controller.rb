@@ -1,24 +1,18 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
+  before_action :set_place, only: [:show, :update, :destroy]
 
   # GET /places
   # GET /places.json
   def index
     @places = Place.all
+
+    render json: @places
   end
 
   # GET /places/1
   # GET /places/1.json
   def show
-  end
-
-  # GET /places/new
-  def new
-    @place = Place.new
-  end
-
-  # GET /places/1/edit
-  def edit
+    render json: @place
   end
 
   # POST /places
@@ -26,28 +20,22 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
 
-    respond_to do |format|
-      if @place.save
-        format.html { redirect_to @place, notice: 'Place was successfully created.' }
-        format.json { render :show, status: :created, location: @place }
-      else
-        format.html { render :new }
-        format.json { render json: @place.errors, status: :unprocessable_entity }
-      end
+    if @place.save
+      render :show, status: :created, location: @place
+    else
+      render json: @place.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /places/1
   # PATCH/PUT /places/1.json
   def update
-    respond_to do |format|
-      if @place.update(place_params)
-        format.html { redirect_to @place, notice: 'Place was successfully updated.' }
-        format.json { render :show, status: :ok, location: @place }
-      else
-        format.html { render :edit }
-        format.json { render json: @place.errors, status: :unprocessable_entity }
-      end
+    @place = Place.find(params[:id])
+
+    if @place.update(place_params)
+      head :no_content
+    else
+      render json: @place.errors, status: :unprocessable_entity
     end
   end
 
@@ -55,10 +43,8 @@ class PlacesController < ApplicationController
   # DELETE /places/1.json
   def destroy
     @place.destroy
-    respond_to do |format|
-      format.html { redirect_to places_url, notice: 'Place was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    head :no_content
   end
 
   private

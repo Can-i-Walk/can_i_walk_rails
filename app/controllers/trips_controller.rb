@@ -1,24 +1,18 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip, only: [:show, :update, :destroy]
 
   # GET /trips
   # GET /trips.json
   def index
     @trips = Trip.all
+
+    render json: @trips
   end
 
   # GET /trips/1
   # GET /trips/1.json
   def show
-  end
-
-  # GET /trips/new
-  def new
-    @trip = Trip.new
-  end
-
-  # GET /trips/1/edit
-  def edit
+    render json: @trip
   end
 
   # POST /trips
@@ -26,28 +20,22 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
 
-    respond_to do |format|
-      if @trip.save
-        format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
-        format.json { render :show, status: :created, location: @trip }
-      else
-        format.html { render :new }
-        format.json { render json: @trip.errors, status: :unprocessable_entity }
-      end
+    if @trip.save
+      render json: @trip, status: :created, location: @trip
+    else
+      render json: @trip.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /trips/1
   # PATCH/PUT /trips/1.json
   def update
-    respond_to do |format|
-      if @trip.update(trip_params)
-        format.html { redirect_to @trip, notice: 'Trip was successfully updated.' }
-        format.json { render :show, status: :ok, location: @trip }
-      else
-        format.html { render :edit }
-        format.json { render json: @trip.errors, status: :unprocessable_entity }
-      end
+    @trip = Trip.find(params[:id])
+
+    if @trip.update(trip_params)
+      head :no_content
+    else
+      render json: @trip.errors, status: :unprocessable_entity
     end
   end
 
@@ -55,10 +43,8 @@ class TripsController < ApplicationController
   # DELETE /trips/1.json
   def destroy
     @trip.destroy
-    respond_to do |format|
-      format.html { redirect_to trips_url, notice: 'Trip was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    head :no_content
   end
 
   private
