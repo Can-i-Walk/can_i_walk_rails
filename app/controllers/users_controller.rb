@@ -16,12 +16,6 @@ class UsersController < ApplicationController
   def dashboard
     # @user = User.find_by(token: params[:token])
     @user = User.find(1)
-
-    # @user_trips = @user.trips
-    # @user_places = @user.places
-    # @user_ratings = @user.ratings
-    # @user_information = [@user, @user_trips, @user_places, @user_ratings]
-    # render json: @user_information
   end
 
   # GET /users/1
