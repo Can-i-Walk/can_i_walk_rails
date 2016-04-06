@@ -7,7 +7,6 @@ class PlaceTest < ActiveSupport::TestCase
 
   test "places have many trip_points" do
     
-
   end
 
 end
