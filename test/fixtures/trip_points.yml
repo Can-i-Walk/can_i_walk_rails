@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  place_id: 1
-  trip_id: 1
+starting:
+  place: tiy
+  trip: duke_garden
   place_type: "Starting Point"
 
-two:
-  place_id: 2
-  trip_id: 1
+ending:
+  place: duke
+  trip: duke_garden
   place_type: "Ending Point"
 
-two:
-  place_id: 3
-  trip_id: 1
+favorite:
+  place: japanese
+  trip: duke_garden
   place_type: "Favorite Places"

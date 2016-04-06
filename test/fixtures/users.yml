@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+geoff:
   token: MyText
   email: "geoffrey.s.arnold@gmail.com"
   password_digest: <%= BCrypt::Password.create("password") %>
   name: "Geoffrey Arnold"
   max_distance: 10.5
 
-two:
+forrest:
   token: MyText
-  email: MyString
+  email: "run.run@mail.com"
   password_digest: <%= BCrypt::Password.create("password") %>
-  name: MyString
-  max_distance: 9.99
+  name: "Forrest Gump"
+  max_distance: 500.0

@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 1
+duke_garden:
+  user: geoff
   trip_name: "Duke Gardens"
   walked_at: 2016-04-06 00:54:21
   planned_at: 2016-04-06 00:54:21
   distance: 2.3
   completion: false
 
-two:
-  user_id: 1
-  trip_name: MyString
+toast:
+  user: geoff
+  trip_name: "Toast"
   walked_at: 2016-04-06 00:54:21
   planned_at: 2016-04-06 00:54:21
-  distance: 9.99
+  distance: 0.4
   completion: false

@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 1
-  place_id: 1
-  ease_rating: 1
-  safety_rating: 1
-  enjoyability_rating: 1
-  accessibility_rating: 1
-  comment: MyText
+duke_rating:
+  user: geoff
+  place: duke
+  ease_rating: 4
+  safety_rating: 3
+  enjoyability_rating: 4
+  accessibility_rating: 5
+  comment: "Duke Gardens is a delightful place."
 
-two:
-  user_id: 1
-  place_id: 1
-  ease_rating: 1
-  safety_rating: 1
-  enjoyability_rating: 1
-  accessibility_rating: 1
-  comment: MyText
+japanese_rating:
+  user: geoff
+  place: japanese
+  ease_rating: 4
+  safety_rating: 4
+  enjoyability_rating: 5
+  accessibility_rating: 4
+  comment: "The Japanese Gardens are a hidden gem."
