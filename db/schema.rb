@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406050110) do
+ActiveRecord::Schema.define(version: 20160406174641) do
 
   create_table "places", force: :cascade do |t|
     t.decimal  "latitude"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20160406050110) do
     t.string   "place_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "places", ["user_id"], name: "index_places_on_user_id"
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "user_id"
