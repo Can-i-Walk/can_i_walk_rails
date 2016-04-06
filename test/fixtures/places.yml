@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  latitude: 9.99
-  longitude: 9.99
-  place_name: MyString
+  latitude: 35.992892
+  longitude: -78.904498
+  place_name: "The Iron Yard"
 
 two:
-  latitude: 9.99
-  longitude: 9.99
-  place_name: MyString
+  latitude: 36.003633
+  longitude: -78.904498
+  place_name: "Duke Gardens"
+
+three:
+  latitude: 36.003633
+  longitude: -78.904498
+  place_name: "Japanese Gardens"

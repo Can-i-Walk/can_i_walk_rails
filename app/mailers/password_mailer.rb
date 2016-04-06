@@ -5,7 +5,7 @@ class PasswordMailer < ApplicationMailer
   #
   #   en.password_mailer.reset_link.subject
   #
-  def reset_link
+  def reset_link(email, link)
     @greeting = "Please follow the link to reset your password: #{link}"
     mail to: email, subject: "Password Reset Request"
   end

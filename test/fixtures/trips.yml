@@ -2,10 +2,10 @@
 
 one:
   user_id: 1
-  trip_name: MyString
+  trip_name: "Duke Gardens"
   walked_at: 2016-04-06 00:54:21
   planned_at: 2016-04-06 00:54:21
-  distance: 9.99
+  distance: 2.3
   completion: false
 
 two:

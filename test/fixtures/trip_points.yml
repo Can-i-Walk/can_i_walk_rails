@@ -3,9 +3,14 @@
 one:
   place_id: 1
   trip_id: 1
-  place_type: MyString
+  place_type: "Starting Point"
 
 two:
-  place_id: 1
+  place_id: 2
   trip_id: 1
-  place_type: MyString
+  place_type: "Ending Point"
+
+two:
+  place_id: 3
+  trip_id: 1
+  place_type: "Favorite Places"

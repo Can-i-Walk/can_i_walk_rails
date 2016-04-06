@@ -2,14 +2,14 @@
 
 one:
   token: MyText
-  email: MyString
-  password_digest: <%= BCrypt::Password.create('secret') %>
-  name: MyString
-  max_distance: 9.99
+  email: "geoffrey.s.arnold@gmail.com"
+  password_digest: <%= BCrypt::Password.create("password") %>
+  name: "Geoffrey Arnold"
+  max_distance: 10.5
 
 two:
   token: MyText
   email: MyString
-  password_digest: <%= BCrypt::Password.create('secret') %>
+  password_digest: <%= BCrypt::Password.create("password") %>
   name: MyString
   max_distance: 9.99

@@ -1,7 +1,13 @@
 require 'test_helper'
 
 class PlaceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "places exist" do
+    assert Place
+  end
+
+  test "places have many trip_points" do
+    
+
+  end
+
 end
