@@ -15,3 +15,11 @@ toast:
   planned_at: 2016-04-06 00:54:21
   distance: 0.4
   completion: false
+
+chicago:
+  user: geoff
+  trip_name: "Imposssible"
+  walked_at: nil
+  planned_at: nil
+  distance: 750
+  completion: false
