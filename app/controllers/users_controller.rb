@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   def dashboard
-    # @user = User.find_by(token: params[:token])
-    @user = User.find(1)
+    @user = User.find_by(token: params[:token])
+    # @user = User.find(1)
   end
 
   # GET /users/1
