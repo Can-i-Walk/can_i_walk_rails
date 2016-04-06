@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  root 'places#index'
+
+  root 'authentication#oauth'
+
+  get 'authentication/oauth'
+  get 'authentication/password_reset'
+  get 'authentication/confirmation'
+  get 'authentication/authenticate'
   resources :ratings, except: [:new, :edit]
   resources :places, except: [:new, :edit]
   resources :trips, except: [:new, :edit]
