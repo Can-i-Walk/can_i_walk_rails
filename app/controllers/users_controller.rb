@@ -1,18 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
-  def password_reset
-    nil_user = "No email found."
-    forgetful_user = User.find_by(email: params[:email])
-    if forgetful_user
-      link = params[:link]
-      PasswordMailer.reset_link(forgetful_user.email, link).deliver_now
-      render json: forgetful_user
-    else
-      render json: nil_user
-    end
-  end
-
   def dashboard
     # @user = User.find_by(token: params[:token])
     @user = User.find(1)
