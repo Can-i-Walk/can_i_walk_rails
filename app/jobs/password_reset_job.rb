@@ -3,6 +3,8 @@ class PasswordResetJob < ActiveJob::Base
 
   def perform(*args)
     # Do something later
-    PasswordMailer.reset_link(forgetful_user.email, link).deliver_now
+    forgetful_user_email = args[0]
+    reset_link = args[1]
+    PasswordMailer.reset_link(forgetful_user_email, reset_link).deliver_now
   end
 end
