@@ -20,6 +20,8 @@
         <td><%= user.email %></td>
         <td><%= user.name %></td>
         <td><%= user.max_distance %></td>
+        <td><%= user.email_confirmed %></td>
+        <td><%= user.confirm_token %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
