@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :trip_points, through: :trips
 
   before_create :generate_token
+  before_create :confirmation_token
 
   validates :email, presence: true, uniqueness: true
 
@@ -14,7 +15,23 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  private def generate_token
-  self.token = SecureRandom.hex
+  def email_activate
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(:validate => false)
+  end
+
+  private
+
+    def generate_token
+    self.token = SecureRandom.hex
+    end
+
+
+    def confirmation_token
+      if self.confirm_token.blank?
+        self.confirm_token = SecureRandom.urlsafe_base64.to_s
+      end
+    end
   end
 end
