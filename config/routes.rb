@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :ratings, except: [:new, :edit]
   resources :places, except: [:new, :edit]
   resources :trips, except: [:new, :edit]
-  resources :users, except: [:index, :new, :edit]
+  resources :users, except: [:new, :edit]
   # get 'password_reset' => 'users#password_reset', as: 'password_reset'
   get 'dashboard' => 'users#dashboard', as: 'dashboard'
 
