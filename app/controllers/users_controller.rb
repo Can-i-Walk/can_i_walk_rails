@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy, :dashboard]
+  before_action :set_user, only: [:show, :update, :destroy]
 
   def index
     @users = User.all
   end
 
   def dashboard
-    @user = User.find_by(token: params[:token])
-    # @user = User.find(1)
+    # @user = User.find_by(token: params[:token])
+    @user = User.find(1)
   end
 
   # GET /users/1
