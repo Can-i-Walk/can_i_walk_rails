@@ -27,7 +27,7 @@ module CanIWalk
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
-        origins '*', :headers => :any, :methods => [:get, :post, :options]
+        origins '*'
         # only let Firebase and OAuth allies make requests of us.
         resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
