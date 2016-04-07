@@ -1,5 +1,17 @@
 <h1>ConfirmationMailer#confirm_registration</h1>
 
 <p>
-  <%= @greeting %>, find me in app/views/confirmation_mailer/confirm_registration.html.erb
+  <%= @greeting %>,
 </p>
+
+<div>
+  Thank you for registering with <%= "CAN<i>WALK" %>! Select confirm to complete your registration.
+  <%= button_to "Confirm", {:controller => :authentication,
+      :action => "confirmation", :id => @user_id, :registration => true}, :method => :patch %>
+</div>
+
+<div>
+  If you did not register with us, we apologize. Select decline to remove yourself from our email list:
+  <%= button_to "Decline", {:controller => :users,
+      :action => "destroy", :id => @user_id}, :method => :delete %>
+</div>

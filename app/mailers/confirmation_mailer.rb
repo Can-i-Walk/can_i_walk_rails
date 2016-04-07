@@ -5,8 +5,9 @@ class ConfirmationMailer < ApplicationMailer
   #
   #   en.confirmation_mailer.confirm_registration.subject
   #
-  def confirm_registration(email, link)
-    @greeting = "Hieeeee"
+  def confirm_registration(email, user_id)
+    @greeting = "Hieeeee. Thank you for registering with CAN<i>Walk, your one-stop traveler app."
+    @user_id = user_id
 
     mail to: email, subject: "Registration Confirmation"
   end

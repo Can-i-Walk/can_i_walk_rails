@@ -16,8 +16,10 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @confirm_link = "http://peaceful-journey-51869.herokuapp.com/authentication/confirmation"
     if @user.save
+      user_id = @user.id
+      RegistrationConfirmationJob.perform_later(@user.email, user_id)
       render json: @user, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -42,6 +44,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     head :no_content
+    # redirect_to firebase.login.com
   end
 
   private
