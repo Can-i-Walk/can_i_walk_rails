@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "Geoff", max_distance: 3.0)
+User.create!(email: "geoffrey.s.arnold@mail.com", password: "password", name: "Geoff", max_distance: 3.0)
 
 Trip.create(user_id: 1, trip_name: "Duke Gardens", distance: 2.5)
 Trip.create(user_id: 1, trip_name: "Tylers Pub", distance: 0.5)
