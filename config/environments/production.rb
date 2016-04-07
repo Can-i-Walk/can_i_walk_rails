@@ -13,6 +13,7 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.action_mailer.default_url_options = {:host => "http://peaceful-journey-51869.herokuapp.com/"}
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
@@ -23,7 +24,7 @@ Rails.application.configure do
       user_name:            'postmaster@'+ENV["MAILGUN_DOMAIN"],
       password:             ENV["MAILGUN_PASSWORD"],
       authentication:       'plain',
-      enable_starttls_auto: true  }  
+      enable_starttls_auto: true  }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
