@@ -43,9 +43,9 @@ class AuthenticationController < ApplicationController
   def authenticate
     user = User.find_by_email(params[:email].downcase)
     if user && user.authenticate(params[:password])
-      # write email confirmed method which checks if their confirmation_token is valid
       if user.email_confirmed
-      # render json for the user, especially user token (not confirmation_token). Maybe create method called sign_in user that does this
+        @user = user
+        # render json: @token
       else
         flash.now[:error] = 'Please activate your account by following the
         instructions in the account confirmation email you received to proceed'
