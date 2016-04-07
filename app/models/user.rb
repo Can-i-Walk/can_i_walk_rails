@@ -21,17 +21,14 @@ class User < ActiveRecord::Base
     save!(:validate => false)
   end
 
-  private
-
-    def generate_token
+  private def generate_token
     self.token = SecureRandom.hex
-    end
+  end
 
 
-    def confirmation_token
-      if self.confirm_token.blank?
-        self.confirm_token = SecureRandom.urlsafe_base64.to_s
-      end
+  private def confirmation_token
+    if self.confirm_token.blank?
+      self.confirm_token = SecureRandom.urlsafe_base64.to_s
     end
   end
 end

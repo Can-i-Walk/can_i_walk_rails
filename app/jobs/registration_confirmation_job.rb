@@ -3,7 +3,7 @@ class RegistrationConfirmationJob < ActiveJob::Base
 
   def perform(*args)
     email = args[0]
-    user_id = args[1]
-    ConfirmationMailer.confirm_registration(email, user_id).deliver_now
+    confirm_token = args[1]
+    ConfirmationMailer.confirm_registration(email, confirm_token).deliver_now
   end
 end

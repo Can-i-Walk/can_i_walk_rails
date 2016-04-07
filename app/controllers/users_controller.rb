@@ -17,8 +17,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      user_id = @user.id
-      RegistrationConfirmationJob.perform_later(@user.email, user_id)
+      confirm_token = @user.confirm_token
+      RegistrationConfirmationJob.perform_later(@user.email, confirm_token)
       # flash[:success] = "Please confirm your email address to continue."
       # redirect_to firebase login
       render json: @user, status: :created, location: @user

@@ -6,12 +6,10 @@
 
 <div>
   Thank you for registering with <%= "CAN<i>WALK" %>! Select confirm to complete your registration.
-  <%= button_to "Confirm", {:controller => :authentication,
-      :action => "confirmation", :id => @user_id, :registration => true}, :method => :patch %>
+  <%= link_to "Confirm", :controller => "authentication", :action => "confirmation", :confirm_token => @confirm_token %>
 </div>
 
 <div>
   If you did not register with us, we apologize. Select decline to remove yourself from our email list:
-  <%= button_to "Decline", {:controller => :users,
-      :action => "destroy", :id => @user_id}, :method => :delete %>
+  <%= link_to "Decline", :controller => "authentication", :action => "decline", :confirm_token => @confirm_token %>
 </div>

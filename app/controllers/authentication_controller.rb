@@ -17,24 +17,27 @@ class AuthenticationController < ApplicationController
   end
 
   def confirmation
-    @user = User.find(params[:id])
-
-    if @user.update(user_params)
-      head :no_content
+    user = User.find_by_confirm_token(params[:confirm_token])
+    if user
+      user.email_activate
+      flash[:success] = "Welcome to the Sample App! Your email has been confirmed. Please sign in to continue."
+      render json: user
     else
-      render json: @user.errors, status: :unprocessable_entity
+      flash[:error] = "Sorry. User does not exist"
+      redirect_to root_url
     end
+  end
 
-    # user = User.find_by_confirm_token(params[:id])
-    # if user
-    #   user.email_activate
-    #   flash[:success] = "Welcome to the Sample App! Your email has been confirmed.
-    #   Please sign in to continue."
-    #   redirect_to signin_url
-    # else
-    #   flash[:error] = "Sorry. User does not exist"
-    #   redirect_to root_url
-    # end
+  def decline
+    user = User.find_by_confirm_token(params[:confirm_token])
+    if user
+      user.destroy!
+      flash[:success] = "Your email has been successfuly removed from our records."
+      redirect_to root_url
+    else
+      flash[:error] = "Sorry. User does not exist"
+      render json: user
+    end
   end
 
   def authenticate
