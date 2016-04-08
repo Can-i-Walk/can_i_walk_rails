@@ -7,12 +7,19 @@ Rails.application.routes.draw do
   get 'authentication/confirmation'
   get 'authentication/authenticate'
   get 'authentication/decline'
+  get 'users/dashboard', defaults: {format: 'json'}
   resources :ratings, except: [:new, :edit]
   resources :places, except: [:new, :edit]
   resources :trips, except: [:new, :edit]
   resources :users, except: [:new, :edit]
+  # resources :users do
+  #   member do
+  #     get :dashboard, defaults: {format: 'json'}
+  #   end
+  # end
+  
   # get 'password_reset' => 'users#password_reset', as: 'password_reset'
-  get 'dashboard' => 'users#dashboard', as: 'dashboard'
+  # get 'users/dashboard' => 'users#dashboard', as: 'dashboard'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
