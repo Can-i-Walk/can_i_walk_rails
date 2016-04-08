@@ -20,8 +20,8 @@ class UsersController < ApplicationController
     if @user.save
       confirm_token = @user.confirm_token
       RegistrationConfirmationJob.perform_later(@user.email, confirm_token)
-      flash[:success] = "Please confirm your email address to continue."
-      redirect_to "https://intense-inferno-3546.firebaseapp.com/#/login"
+      # flash[:success] = "Please confirm your email address to continue."
+      # redirect_to "https://intense-inferno-3546.firebaseapp.com/#/login"
       # render json: @user, status: :created, location: @user
     else
       flash[:error] = "Email already taken."

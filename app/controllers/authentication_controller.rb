@@ -20,11 +20,11 @@ class AuthenticationController < ApplicationController
     user = User.find_by_confirm_token(params[:confirm_token])
     if user
       user.email_activate
-      flash[:success] = "Welcome to the Sample App! Your email has been confirmed. Please sign in to continue."
+      # flash[:success] = "Welcome to the Sample App! Your email has been confirmed. Please sign in to continue."
       render json: user
     else
-      flash[:error] = "Sorry. User does not exist"
-      redirect_to root_url
+      # flash[:error] = "Sorry. User does not exist"
+      # redirect_to root_url
     end
   end
 
@@ -32,10 +32,10 @@ class AuthenticationController < ApplicationController
     user = User.find_by_confirm_token(params[:confirm_token])
     if user
       user.destroy!
-      flash[:success] = "Your email has been successfuly removed from our records."
-      redirect_to root_url
+      # flash[:success] = "Your email has been successfuly removed from our records."
+      # redirect_to root_url
     else
-      flash[:error] = "Sorry. User does not exist"
+      # flash[:error] = "Sorry. User does not exist"
       render json: user
     end
   end
@@ -47,13 +47,13 @@ class AuthenticationController < ApplicationController
         @user = user
         # render json: @token
       else
-        flash.now[:error] = 'Please activate your account by following the
-        instructions in the account confirmation email you received to proceed'
-        render 'new'
+        # flash.now[:error] = 'Please activate your account by following the
+        # instructions in the account confirmation email you received to proceed'
+        # render 'new'
       end
     else
-      flash.now[:error] = 'Invalid email/password combination' # Not quite right!
-      render 'new'
+      # flash.now[:error] = 'Invalid email/password combination' # Not quite right!
+      # render 'new'
     end
   end
 end
