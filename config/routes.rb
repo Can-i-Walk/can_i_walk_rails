@@ -12,12 +12,8 @@ Rails.application.routes.draw do
   resources :places, except: [:new, :edit]
   resources :trips, except: [:new, :edit]
   resources :users, except: [:new, :edit]
-  # resources :users do
-  #   member do
-  #     get :dashboard, defaults: {format: 'json'}
-  #   end
-  # end
-  
+
+
   # get 'password_reset' => 'users#password_reset', as: 'password_reset'
   # get 'users/dashboard' => 'users#dashboard', as: 'dashboard'
 

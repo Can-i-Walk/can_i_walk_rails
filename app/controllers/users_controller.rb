@@ -6,14 +6,11 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    # @user = User.find_by(token: params[:token])
-    # @user = User.find(1)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    # render json: @user
   end
 
   # POST /users
