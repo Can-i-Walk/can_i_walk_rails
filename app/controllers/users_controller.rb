@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
+    @trip_points = @user.trip_points
   end
 
   # GET /users/1
@@ -20,9 +21,6 @@ class UsersController < ApplicationController
     if @user.save
       confirm_token = @user.confirm_token
       RegistrationConfirmationJob.perform_later(@user.email, confirm_token)
-      # flash[:success] = "Please confirm your email address to continue."
-      # redirect_to "https://intense-inferno-3546.firebaseapp.com/#/login"
-      # render json: @user, status: :created, location: @user
     else
       flash[:error] = "Email already taken."
       render json: @user.errors, status: :unprocessable_entity
@@ -32,7 +30,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
 
     if @user.update(user_params)
       head :no_content
@@ -47,7 +45,6 @@ class UsersController < ApplicationController
     @user.destroy
 
     head :no_content
-    # redirect_to firebase.login.com
   end
 
   private
