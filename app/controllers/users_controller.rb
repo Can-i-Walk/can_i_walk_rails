@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @trip_points = @user.trip_points
+    # @trip_points = @user.trip_points
   end
 
   # GET /users/1

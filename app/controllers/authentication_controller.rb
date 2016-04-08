@@ -21,7 +21,7 @@ class AuthenticationController < ApplicationController
     if user
       user.email_activate
       # flash[:success] = "Welcome to the Sample App! Your email has been confirmed. Please sign in to continue."
-      render json: user
+      redirect_to "https://intense-inferno-3546.firebaseapp.com/#/login"
     else
       # flash[:error] = "Sorry. User does not exist"
       # redirect_to root_url
