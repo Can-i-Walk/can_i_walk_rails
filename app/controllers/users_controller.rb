@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    # @trip_points = @user.trip_points
+    # favorite_places = Place.joins("LEFT OUTER JOIN trip_points ON trip_points.place_id = places.id").where("trip_points.place_type IS 'Favorite Places'")
+    # @user_favorites = favorite_places.where(user_id: @user.id)
+    @user_favorites = @user.favorite_places
   end
 
   # GET /users/1
@@ -50,7 +52,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find_by(token: params[:token])
+      @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

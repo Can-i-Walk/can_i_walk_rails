@@ -1,3 +1,3 @@
-json.user [@user] do |u|
-  json.extract! u, :token
+json.user [@current_user] do |u|
+  json.extract! u, :token, :id
 end

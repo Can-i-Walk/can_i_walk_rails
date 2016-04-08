@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
     save!(:validate => false)
   end
 
+  def favorite_places
+    trip_points.where(place_type: "Favorite Places").map &:place
+  end
+
   private def generate_token
     self.token = SecureRandom.hex
   end

@@ -44,7 +44,7 @@ class AuthenticationController < ApplicationController
     user = User.find_by_email(params[:email].downcase)
     if user && user.authenticate(params[:password])
       if user.email_confirmed
-        @user = user
+        @current_user = user
         # render json: @token
       else
         # flash.now[:error] = 'Please activate your account by following the
