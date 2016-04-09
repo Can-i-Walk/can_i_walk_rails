@@ -26,7 +26,7 @@ class TripsController < ApplicationController
       @destination_point = TripPoint.new(trip_id: @trip.id, place_id: @destination.id, place_type: "Ending")
       @origin_point.save
       @destination_point.save
-      redirect_to controller: 'places', action: 'nearby_favorite_places', distance: params[:distance], origin_lat: params[:origin_lat], origin_long: params[:origin_long]
+      redirect_to controller: 'places', action: 'nearby_favorite_places', distance: params[:distance], origin_lat: params[:origin_lat], origin_long: params[:origin_long], dest_lat: params[:dest_lat], dest_long: params[:dest_long]
       # render json: @trip, status: :created, location: @trip
     else
       render json: @trip.errors, status: :unprocessable_entity
