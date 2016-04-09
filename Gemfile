@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 
+gem 'geokit-rails'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'rack-cors', :require => 'rack/cors'

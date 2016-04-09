@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'authentication/authenticate'
   get 'authentication/decline'
   get 'users/dashboard', defaults: {format: 'json'}
+  get 'places/nearby_favorite_places', defaults: {format: 'json'}
   resources :ratings, except: [:new, :edit]
   resources :places, except: [:new, :edit]
   resources :trips, except: [:new, :edit]

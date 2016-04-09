@@ -3,4 +3,16 @@ class Place < ActiveRecord::Base
   has_many :trip_points
 
   belongs_to :user
+
+  acts_as_mappable :default_units => :miles,
+                   :default_formula => :sphere,
+                   :distance_field_name => :distance,
+                   :lat_column_name => :latitude,
+                   :lng_column_name => :longitude
+
+
+  def nearby_places(origin_lat, origin_long)
+    within(0.25, :origin => [origin_lat, origin_long])
+  end
+
 end
