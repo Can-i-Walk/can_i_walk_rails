@@ -13,7 +13,9 @@ class PlacesController < ApplicationController
   # GET /places/1.json
 
   def nearby_favorite_places
-    nearby_places = Place.within(0.25, :origin => [35.992892, -78.904498])
+    @distance = (params[:distance])
+    nearby_places = Place.within(0.25, :origin => [params[:origin_lat], params[:origin_long]])
+    # :origin => [35.992892, -78.904498]
     favorite_nearby_places = []
     nearby_places.each do |f|
       if f.trip_points.where(place_type: "Favorite Places").first

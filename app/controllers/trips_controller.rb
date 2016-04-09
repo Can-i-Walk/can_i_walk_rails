@@ -19,14 +19,15 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(user_id: params[:user_id], trip_name: params[:trip_name], distance: params[:distance], walked_at: Time.now)
-    @origin = Place.new(user_id: params[:user_id], place_name: params[:origin_name], latitude: params[:origin_lat], longitude: params[origin_long])
-    @destination = Place.new(user_id: params[:user_id], place_name: params[:dest_name], latitude: params[:dest_lat], longitude: params[dest_long])
+    @origin = Place.new(user_id: params[:user_id], place_name: params[:origin_name], latitude: params[:origin_lat], longitude: params[:origin_long])
+    @destination = Place.new(user_id: params[:user_id], place_name: params[:dest_name], latitude: params[:dest_lat], longitude: params[:dest_long])
     if @trip.save && @origin.save && @destination.save
       @origin_point = TripPoint.new(trip_id: @trip.id, place_id: @origin.id, place_type: "Starting")
       @destination_point = TripPoint.new(trip_id: @trip.id, place_id: @destination.id, place_type: "Ending")
       @origin_point.save
       @destination_point.save
-      render json: @trip, status: :created, location: @trip
+      redirect_to controller: 'places', action: 'favorite_nearby_places', distance: params[:distance], origin_lat: params[:origin_lat], origin_long: params[:origin_long]
+      # render json: @trip, status: :created, location: @trip
     else
       render json: @trip.errors, status: :unprocessable_entity
     end
