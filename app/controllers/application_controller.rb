@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
     request.format = 'json'
   end
 
+  private def authenticate
+  @current_user = User.find_by(token: params[:token])
+  unless @current_user
+    render json: "User must be logged in!"
+  end
 end

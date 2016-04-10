@@ -39,20 +39,21 @@ class AuthenticationController < ApplicationController
     end
   end
 
-  def authenticate
-    user = User.find_by_email(params[:email].downcase)
-    if user && user.authenticate(params[:password])
-      if user.email_confirmed
-        @current_user = user
-        # render json: @token
-      else
-        # flash.now[:error] = 'Please activate your account by following the
-        # instructions in the account confirmation email you received to proceed'
-        # render 'new'
-      end
+  def login
+  @current_user = User.find_by_email(params[:email])
+    if @current_user && @current_user.authenticate(params[:password])
+      if @current_user.email_confirmed
+      @current_user.generate_token
+      @current_user.save!
+      render json: @current_user
     else
-      # flash.now[:error] = 'Invalid email/password combination' # Not quite right!
-      # render 'new'
+      render json: "Wrong email and password combination. Please try again."
     end
+  end
+
+  def logout
+    @current_user.token = nil
+    @current_user.save!
+    render json: "Logout Successful"
   end
 end

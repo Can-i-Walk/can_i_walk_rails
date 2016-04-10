@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get 'authentication/oauth'
   get 'authentication/password_reset'
   get 'authentication/confirmation'
-  get 'authentication/authenticate'
   get 'authentication/decline'
+  # get 'authentication/login'
+  post 'authentication/login'
+  post 'authetnication/logout'
+
   get 'users/dashboard', defaults: {format: 'json'}
   get 'places/nearby_favorite_places', defaults: {format: 'json'}
   resources :ratings, except: [:new, :edit]
