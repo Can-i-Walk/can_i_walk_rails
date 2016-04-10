@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'authentication/decline'
   # get 'authentication/login'
   post 'authentication/login'
-  post 'authetnication/logout'
+  post 'authentication/logout'
 
   get 'users/dashboard', defaults: {format: 'json'}
   get 'places/nearby_favorite_places', defaults: {format: 'json'}

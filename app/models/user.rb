@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true, uniqueness: true
 
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
 
   has_secure_password
 
@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     trip_points.where(place_type: "Favorite Places").map &:place
   end
 
-  private def generate_token
+  def generate_token
     self.token = SecureRandom.urlsafe_base64.to_s
   end
 
