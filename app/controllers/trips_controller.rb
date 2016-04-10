@@ -15,6 +15,11 @@ class TripsController < ApplicationController
     render json: @trip
   end
 
+  # if Place.where(place_name: params[:origin_name] || params[:dest_name])
+  #   Place.where(place_name: params[:origin_name] || params[:dest_name]).first.count += 1
+  # else
+  #   save
+
   # POST /trips
   # POST /trips.json
   def create

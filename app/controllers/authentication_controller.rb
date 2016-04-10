@@ -6,8 +6,7 @@ class AuthenticationController < ApplicationController
     nil_user = "No email found."
     forgetful_user = User.find_by(email: params[:email])
     if forgetful_user
-      link = params[:link]
-      PasswordResetJob.perform_later(forgetful_user.email, link)
+      PasswordResetJob.perform_later(forgetful_user.email, forgetful_user.id)
       render json: forgetful_user
       # Redirect user to a CAN<i>WALK page logo with request for them to look at their email.
     else

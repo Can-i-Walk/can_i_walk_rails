@@ -37,7 +37,12 @@ Place.create!(user_id: 2, latitude: 35.996952, longitude: -78.903574, place_name
 Place.create!(user_id: 2, latitude: 35.992892, longitude: -78.904498, place_name: "Surf Club")
 Place.create!(user_id: 2, latitude: 35.993838, longitude: -78.897821, place_name: "First Presbyterian Church")
 Place.create!(user_id: 2, latitude: 35.993122, longitude: -78.897590, place_name: "Durham Country Criminal Justice")
+Place.create!(user_id: 2, latitude: 35.993122, longitude: -78.897590, place_name: "Durham Country Criminal Justice")
+Place.create!(user_id: 2, latitude: 35.993122, longitude: -78.897590, place_name: "Durham Country Criminal Justice")
 Place.create!(user_id: 2, latitude: 35.994719, longitude: -78.899929, place_name: "Bar Lusconi")
+Place.create!(user_id: 2, latitude: 35.994719, longitude: -78.899929, place_name: "Bar Lusconi")
+Place.create!(user_id: 2, latitude: 35.994719, longitude: -78.899929, place_name: "Bar Lusconi")
+
 
 TripPoint.create!(place_id: 1, trip_id: 1, place_type: "Starting Point")
 TripPoint.create!(place_id: 2, trip_id: 1, place_type: "Ending Point")

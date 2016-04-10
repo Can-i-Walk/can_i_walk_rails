@@ -25,9 +25,10 @@ class PlacesController < ApplicationController
         favorite_nearby_places << f
       end
     end
+
     @favorite_nearby_places = favorite_nearby_places
 
-
+    # .map(&:place_name).uniq
 
   end
 
