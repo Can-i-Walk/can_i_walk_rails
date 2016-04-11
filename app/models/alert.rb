@@ -4,7 +4,7 @@ class Alert
   end
 
   def alerts
-    @alert = @response["alerts"][0]
+    @response["alerts"][0]
   end
 
 

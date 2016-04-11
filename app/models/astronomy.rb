@@ -4,11 +4,11 @@ class Astronomy
   end
 
   def sunrise
-  @astronomy["sun_phase"]["sunrise"]["hour"] + ":" + @astronomy["sun_phase"]["sunrise"]["minute"]
-end
+    @astronomy["sun_phase"]["sunrise"]["hour"] + ":" + @astronomy["sun_phase"]["sunrise"]["minute"]
+  end
 
-def sunset
-  @astronomy["sun_phase"]["sunset"]["hour"] + ":" + @astronomy["sun_phase"]["sunset"]["minute"]
-end
+  def sunset
+    @astronomy["sun_phase"]["sunset"]["hour"] + ":" + @astronomy["sun_phase"]["sunset"]["minute"]
+  end
 
 end
