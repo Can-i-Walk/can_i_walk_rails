@@ -1,4 +1,6 @@
 class AuthenticationController < ApplicationController
+  before_action :authenticate, only: [:password_reset]
+
   def oauth
   end
 
@@ -8,10 +10,8 @@ class AuthenticationController < ApplicationController
     if forgetful_user
       PasswordResetJob.perform_later(forgetful_user.email, forgetful_user.id)
       render json: forgetful_user
-      # Redirect user to a CAN<i>WALK page logo with request for them to look at their email.
     else
       render json: nil_user
-      # Redirect user to some page where you inform them that the email was not found. Maybe just raise an alert.
     end
   end
 

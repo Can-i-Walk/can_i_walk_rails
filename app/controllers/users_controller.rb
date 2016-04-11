@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy, :dashboard]
+  before_action :authenticate, except: [:index, :create]
 
   def index
     @users = User.all
   end
 
   def dashboard
-    # favorite_places = Place.joins("LEFT OUTER JOIN trip_points ON trip_points.place_id = places.id").where("trip_points.place_type IS 'Favorite Places'")
-    # @user_favorites = favorite_places.where(user_id: @user.id)
     @user_favorites = @user.favorite_places
   end
 
