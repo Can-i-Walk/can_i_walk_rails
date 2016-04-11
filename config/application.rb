@@ -29,7 +29,7 @@ module CanIWalk
       allow do
         origins '*'
         # only let Firebase and OAuth allies make requests of us.
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
+        resource '*', :headers => :any, :methods => [:get, :post, :options, :delete, :put, :patch]
       end
     end
 
