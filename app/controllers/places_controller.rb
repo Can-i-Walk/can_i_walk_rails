@@ -15,6 +15,8 @@ class PlacesController < ApplicationController
     favorite_nearby_places = []
     nearby_origin = Place.within(0.25, :origin => [params[:origin_lat], params[:origin_long]])
     nearby_destination = Place.within(0.25, :origin => [params[:dest_lat], params[:dest_long]])
+    nearby_origin = nearby_origin.group(:place_name)
+    nearby_destination = nearby_destination.group(:place_name)
     nearby_origin.each do |f|
       if f.trip_points.where(place_type: "Favorite Places").first
         favorite_nearby_places << f
