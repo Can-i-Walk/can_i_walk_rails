@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:show, :update, :destroy]
+  before_action :set_trip, only: [:show, :update, :destroy, :reject_trip]
 
   # GET /trips
   # GET /trips.json
@@ -15,10 +15,13 @@ class TripsController < ApplicationController
     render json: @trip
   end
 
-  # if Place.where(place_name: params[:origin_name] || params[:dest_name])
-  #   Place.where(place_name: params[:origin_name] || params[:dest_name]).first.count += 1
-  # else
-  #   save
+  def reject_trip
+    # user = User.find(params[:user_id])
+    # latest_trip = user.trips.last
+    # @trip = Trip.find(params[:id])
+    @trip.completion = params[:completion]
+    @trip.save
+  end
 
   # POST /trips
   # POST /trips.json
@@ -42,7 +45,6 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
 
     if @trip.update(trip_params)
-      head :no_content
     else
       render json: @trip.errors, status: :unprocessable_entity
     end

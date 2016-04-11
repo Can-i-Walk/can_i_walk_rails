@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   resources :ratings, except: [:new, :edit]
   resources :places, except: [:new, :edit]
   resources :trips, except: [:new, :edit]
+  # resources :trips do
+  #   put :reject_trip, on: :member
+  # end
   resources :users, except: [:new, :edit]
 
 
