@@ -23,9 +23,7 @@ class PlacesController < ApplicationController
       end
     end
     nearby_destination.each do |f|
-      if f.trip_points.where(place_type: "Favorite Places").first
-        favorite_nearby_places << f
-      end
+      favorite_nearby_places << f if f.trip_points.where(place_type: "Favorite Places").first
     end
 
     @favorite_nearby_places = favorite_nearby_places

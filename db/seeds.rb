@@ -56,13 +56,13 @@ Place.create!(user_id: 2, latitude: 35.993838, longitude: -78.897821, place_name
 Place.create!(user_id: 2, latitude: 35.993146, longitude: -78.897525, place_name: "Durham Country Criminal Justice")
 # id: 15
 Place.create!(user_id: 2, latitude: 35.993146, longitude: -78.897525, place_name: "Durham Country Criminal Justice")
-# id: 16
+# # id: 16
 Place.create!(user_id: 2, latitude: 35.993146, longitude: -78.897525, place_name: "Durham Country Criminal Justice")
 # id: 17
 Place.create!(user_id: 2, latitude: 35.993498, longitude: -78.897518, place_name: "Marcus E. Hill Attorney at Law")
 # id: 18
 Place.create!(user_id: 2, latitude: 35.993498, longitude: -78.897518, place_name: "Marcus E. Hill Attorney at Law")
-# id: 19
+# # id: 19
 Place.create!(user_id: 2, latitude: 35.993498, longitude: -78.897518, place_name: "Marcus E. Hill Attorney at Law")
 
 
