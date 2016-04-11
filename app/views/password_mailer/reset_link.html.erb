@@ -1,9 +1,30 @@
 <h1>Password Reset</h1>
 
+<p>Thank you for using <span class="confirm-words">CAN</span><span class="confirm-symbols">&#60i&#62</span><span class="confirm-words">WALK</span> for your travelling needs. We're happy that you're here, and we hope to get you walking soon. Let's walk somewhere!
+</p>
 <p>
   "Please follow the link to reset your password: "
   <%= link_to "Reset Password", "https://intense-inferno-3546.firebaseapp.com/#/password", :id => @user_id %>
 </p>
 <style>
 /*this will have the styling for the reset password email*/
+.confirm-words {
+   color: #CD5334;
+   font-weight: bold;
+}
+.confirm-symbols {
+   color: #17BEBB;
+   font-weight: bold;
+}
+a {
+   text-decoration: none;
+   background-color: #CD5334;
+   border: 2px solid #CD5334;
+   border-radius: 2px;
+   color: #f5f5f1;
+}
+a:hover {
+   text-decoration: underline;
+   color: #f5f5f1;
+}
 </style>
