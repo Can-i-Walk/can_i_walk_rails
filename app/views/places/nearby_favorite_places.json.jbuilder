@@ -13,7 +13,7 @@ end
 # @condition.conditions
 # @hourly_forcast.temperature
 
-json.weather_info(@weather_info) do |w|
+json.weather_info(@weather_info).each do |w|
   json.alerts w.alerts.alerts
   json.surnise w.astronomy.sunrise
   json.sunset w.astronomy.sunset
