@@ -35,7 +35,8 @@ class TripsController < ApplicationController
       @origin_point.save
       @destination_point.save
     else
-      render json: @trip.errors, status: :unprocessable_entity
+      render :json => {:success => false, :errors => ["Trip creation failed."]}
+      # render json: @trip.errors, status: :unprocessable_entity
     end
   end
 
@@ -45,17 +46,21 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
 
     if @trip.update(trip_params)
+      render :json => {:success => true}
     else
-      render json: @trip.errors, status: :unprocessable_entity
+      render :json => {:success => false, :errors => ["Trip update failed."]}
+      # render json: @trip.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /trips/1
   # DELETE /trips/1.json
   def destroy
-    @trip.destroy
-
-    head :no_content
+    if @trip.destroy
+      render :json => {:success => true}
+    else
+      render :json => {:success => false, :errors => ["Delete failed."]}
+    end
   end
 
   private
