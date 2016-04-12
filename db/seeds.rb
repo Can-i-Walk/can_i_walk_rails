@@ -85,14 +85,19 @@ TripPoint.create!(place_id: 12, trip_id: 4, place_type: "Starting Point")
 TripPoint.create!(place_id: 13, trip_id: 4, place_type: "Ending Point")
 TripPoint.create!(place_id: 14, trip_id: 4, place_type: "Favorite Places")
 TripPoint.create!(place_id: 15, trip_id: 4, place_type: "Favorite Places")
-TripPoint.create!(place_id: 16, trip_id: 5, place_type: "Favorite Places")
+TripPoint.create!(place_id: 16, trip_id: 5, place_type: "Ending Point")
 TripPoint.create!(place_id: 17, trip_id: 5, place_type: "Favorite Places")
 TripPoint.create!(place_id: 18, trip_id: 6, place_type: "Favorite Places")
-TripPoint.create!(place_id: 19, trip_id: 6, place_type: "Favorite Places")
+TripPoint.create!(place_id: 19, trip_id: 6, place_type: "Ending Point")
 
 
 
 
 Rating.create!(user_id: 1, place_id: 2, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Beautiful place.")
-Rating.create!(user_id: 1, place_id: 4, ease_rating: 5, safety_rating: 5, enjoyability_rating: 3, accessibility_rating: 5, comment: "It is aight.")
-Rating.create!(user_id: 1, place_id: 5, ease_rating: 4, safety_rating: 3, enjoyability_rating: 4, accessibility_rating: 4, comment: "Love me lucky strikes.")
+Rating.create!(user_id: 1, place_id: 4, ease_rating: 5, safety_rating: 5, enjoyability_rating: 3, accessibility_rating: 5, comment: "Art, what can I say?")
+Rating.create!(user_id: 1, place_id: 5, ease_rating: 4, safety_rating: 3, enjoyability_rating: 4, accessibility_rating: 4, comment: "Meh, it's Tylers.")
+Rating.create!(user_id: 1, place_id: 6, ease_rating: 4, safety_rating: 3, enjoyability_rating: 4, accessibility_rating: 4, comment: "Love me lucky strikes.")
+Rating.create!(user_id: 1, place_id: 9, ease_rating: 4, safety_rating: 3, enjoyability_rating: 4, accessibility_rating: 4, comment: "No, it's not Mexican.")
+Rating.create!(user_id: 1, place_id: 13, ease_rating: 4, safety_rating: 3, enjoyability_rating: 4, accessibility_rating: 4, comment: "It was divine.")
+Rating.create!(user_id: 1, place_id: 16, ease_rating: 4, safety_rating: 3, enjoyability_rating: 4, accessibility_rating: 4, comment: "Wasn't too just.")
+Rating.create!(user_id: 1, place_id: 19, ease_rating: 4, safety_rating: 3, enjoyability_rating: 4, accessibility_rating: 4, comment: "Kinda felt like a liar.")

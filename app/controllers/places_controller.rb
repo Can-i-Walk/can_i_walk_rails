@@ -16,24 +16,29 @@ class PlacesController < ApplicationController
 
   def nearby_favorite_places
     @distance = (params[:distance])
-    favorite_nearby_places = []
+    @weather_info = WeatherInfo.new(params[:dest_lat], params[:dest_long])
+    # @alert = Alert.new(params[:dest_lat], params[:dest_long])
+    # @astronomy = Astronomy.new(params[:dest_lat], params[:dest_long])
+    # @condition = Condition.new(params[:dest_lat], params[:dest_long])
+    # @hourly_forcast = Hourly.new(params[:dest_lat], params[:dest_long])
+    @rated_places = []
+    @favorite_nearby_places = []
     nearby_origin = Place.within(0.25, :origin => [params[:origin_lat], params[:origin_long]])
     nearby_destination = Place.within(0.25, :origin => [params[:dest_lat], params[:dest_long]])
     # nearby_origin = nearby_origin.group(:place_name)
     # nearby_destination = nearby_destination.group(:place_name)
-    nearby_origin.each do |f|
-      if f.trip_points.where(place_type: "Favorite Places").first
-        favorite_nearby_places << f
-      end
-    end
-    nearby_destination.each do |f|
-      favorite_nearby_places << f if f.trip_points.where(place_type: "Favorite Places").first
+
+    nearby_destination.each do |n|
+      @rated_places << n if n.trip_points.where(place_type: "Ending Point").first
     end
 
-    @favorite_nearby_places = favorite_nearby_places
+    nearby_origin.each do |n|
+      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite Places").first
+    end
 
-    # .map(&:place_name).uniq
-
+    nearby_destination.each do |n|
+      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite Places").first
+    end
   end
 
   def show
