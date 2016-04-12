@@ -33,12 +33,16 @@ class AuthenticationController < ApplicationController
   end
 
   def login
-  @current_user = User.find_by_email(params[:email])
+    @current_user = User.find_by_email(params[:email])
     if @current_user && @current_user.authenticate(params[:password])
       if @current_user.email_confirmed
         @current_user.generate_token
         @current_user.save!
         render json: @current_user
+      else
+        confirm_token = @current_user.confirm_token
+        RegistrationConfirmationJob.perform_later(@current_user.email, confirm_token)
+        render :json => {:success => false, :errors => ["Please confirm your email to login."]}
       end
     else
       render :json => {:success => false, :errors => ["Login failed."]}

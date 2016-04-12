@@ -16,10 +16,11 @@ class Rating < ActiveRecord::Base
   #
   #   end
   #
-  #   # Rating.joins(:trip_points).where("rating.place_id = trip_point.id").joins(:trip_points).where("trip_points.place_id = place.id")
-  #   #
-  #   # Rating.where(rating.place.trip_points.where(place_type: "Ending Point")).within.pluck(:ease_rating).average
-  #   # Rating.pluck(:ease_rating).where(ratings.place.trip_points.include?(place_type: "Ending Point"))
+  #   Rating.joins('INNER JOIN places ON place.id = ratings.place_id').within().joins(:trip_points).where("trip_points.place_id = place.id")
+  #
+  #   Rating.where(rating.place.trip_points.where(place_type: "Ending Point")).within.pluck(:ease_rating).average
+  #   all_ratings = Rating.joins(:trip_points).where("place_type='Ending Point'")
+  #     eases = all_ratings.pluck(:ease_rating)
   #
   #   nearby_destination.each do |n|
   #     @rated_places << n if n.trip_points.where(place_type: "Ending Point").first
