@@ -1,4 +1,12 @@
+
+
 class WeatherInfo
+  attr_reader :conditions
+  attr_reader :forecast
+  attr_reader :alerts
+  attr_reader :hourly
+  attr_reader :astronomy
+
   def initialize(latitude, longitude)
     @latitude = latitude
     @longitude = longitude
