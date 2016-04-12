@@ -48,7 +48,8 @@ class AuthenticationController < ApplicationController
         render json: @current_user
       end
     else
-      render json: "Wrong email and password combination. Please try again."
+      render :json => {:success => false, :errors => ["Login failed."]}
+      # render json: "Wrong email and password combination. Please try again."
     end
   end
 
