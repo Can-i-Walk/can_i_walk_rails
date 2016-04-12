@@ -46,7 +46,7 @@ class AuthenticationController < ApplicationController
   end
 
   def logout
-    @current_user = User.find_id(params[:user_id])
+    @current_user = User.find(params[:user_id])
     @current_user.token = nil
     @current_user.save!
     if @current_user.token == nil
