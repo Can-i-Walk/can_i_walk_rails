@@ -94,6 +94,7 @@ class PlacesController < ApplicationController
       render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["Delete failed."]}
+    end
   end
 
   private
