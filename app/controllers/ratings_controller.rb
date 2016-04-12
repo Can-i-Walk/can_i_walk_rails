@@ -18,12 +18,11 @@ class RatingsController < ApplicationController
   # POST /ratings
   # POST /ratings.json
   def create
-    @rating = Rating.new(rating_params)
-
+    @rating = Rating.new(user_id: params[:user_id], place_id: params[:place_id], ease_rating: params[:ease_rating], safety_rating: params[:safety_rating], enjoyability_rating: params[:enjoyability_rating], accessibility_rating: params[:accessibility_rating], comment: params[:comment])
     if @rating.save
       render json: @rating, status: :created, location: @rating
     else
-      render json: @rating.errors, status: :unprocessable_entity
+      render :json => {:success => false, :errors => ["Rating creation failed."]}
     end
   end
 
@@ -33,18 +32,20 @@ class RatingsController < ApplicationController
     @rating = Rating.find(params[:id])
 
     if @rating.update(rating_params)
-      head :no_content
+      render :json => {:success => true, :errors => ["Update successful."]}
     else
-      render json: @rating.errors, status: :unprocessable_entity
+      render :json => {:success => false, :errors => ["Rating update failed."]}
     end
   end
 
   # DELETE /ratings/1
   # DELETE /ratings/1.json
   def destroy
-    @rating.destroy
-
-    head :no_content
+    if @rating.destroy
+      render :json => {:success => true, :errors => ["Delete successful."]}
+    else
+      render :json => {:success => false, :errors => ["Delete failed."]}
+    end
   end
 
   private
