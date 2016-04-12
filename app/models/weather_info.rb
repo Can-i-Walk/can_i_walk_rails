@@ -1,5 +1,3 @@
-
-
 class WeatherInfo
   attr_reader :conditions
   attr_reader :forecast
