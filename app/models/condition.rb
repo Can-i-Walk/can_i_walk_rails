@@ -9,4 +9,12 @@ class Condition
     @response["current_observation"]["temp_f"]
   end
 
+  def weather
+    @response["current_observation"]["weather"]
+  end
+
+  def weather_icon
+    @response["current_observation"]["icon_url"]
+  end
+
 end
