@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get 'authentication/confirmation'
   get 'authentication/decline'
   # get 'authentication/login'
-  post 'authentication/login'
-  post 'authentication/logout'
+  put 'authentication/login'
+  put 'authentication/logout'
 
   get 'users/dashboard', defaults: {format: 'json'}
   get 'places/map_info', defaults: {format: 'json'}
