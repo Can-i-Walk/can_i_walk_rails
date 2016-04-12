@@ -1,13 +1,9 @@
 <div class="confirm-email-container">
-
    <h1>ConfirmationMailer</h1>
-   <p>
-     <%= @greeting %>,
-   </p>
 
-   <div class="confirm">
-     Thank you for registering with <span class="confirm-words">CAN</span><span class="confirm-symbols">&#60i&#62</span><span class="confirm-words">WALK</span>! Select confirm to complete your registration.
-     <div class="confirm-button">
+   <div class="confirm" style="color:blue;">
+      Thank you for registering with <span class="confirm-words">CAN</span><span class="confirm-symbols"><%="<i>"%></span><span class="confirm-words">WALK</span>! Select confirm to complete your registration.
+      <div class="confirm-button">
          <%= link_to "Confirm", :controller => "authentication", :action => "confirmation", :confirm_token => @confirm_token %>
       </div>
    </div>
@@ -19,33 +15,3 @@
      </div>
    </div>
 </div>
-<style>
-   /* this will have the styling for the confirm registration email */
-   .confirm-words {
-      color: #CD5334;
-      font-weight: bold;
-   }
-   .confirm-symbols {
-      color: #17BEBB;
-      font-weight: bold;
-   }
-   .confirm-button {
-      text-decoration: none;
-      background-color: #17BEBB;
-      border: 2px solid #17BEBB;
-      border-radius: 2px;
-      color: #f5f5f1;
-   }
-   .decline-button {
-      text-decoration: none;
-      background-color: #CD5334;
-      border: 2px solid #CD5334;
-      border-radius: 2px;
-      color: #f5f5f1;
-   }
-   a:hover {
-      text-decoration: underline;
-      color: #f5f5f1;
-   }
-
-</style>
