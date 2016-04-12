@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   post 'authentication/logout'
 
   get 'users/dashboard', defaults: {format: 'json'}
-  get 'places/nearby_favorite_places', defaults: {format: 'json'}
+  get 'places/map_info', defaults: {format: 'json'}
+  get 'places/places_of_interest', defaults: {format: 'json'}
   resources :ratings, except: [:new, :edit]
   resources :places, except: [:new, :edit]
   resources :trips, except: [:new, :edit]

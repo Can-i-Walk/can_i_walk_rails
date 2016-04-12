@@ -1,3 +1,5 @@
+require 'httparty'
+
 class Astronomy
   def initialize(latitude, longitude)
     @response = HTTParty.get("http://api.wunderground.com/api/#{ENV["WUNDERGROUND_KEY"]}/astronomy/q/#{latitude},#{longitude}.json")
