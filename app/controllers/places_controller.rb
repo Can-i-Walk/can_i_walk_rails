@@ -10,6 +10,10 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
 
+  def weather
+    @weather = WeatherInfo.new(params[:latitude], params[:longitude])
+  end
+
   def nearby_favorite_places
     @distance = (params[:distance])
     favorite_nearby_places = []
