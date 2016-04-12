@@ -16,12 +16,12 @@ class PlacesController < ApplicationController
   # end
 
   def map_info
-    @distance = (params[:distance])
+    # @distance = (params[:distance])
     # @weather_info = WeatherInfo.new(params[:dest_lat], params[:dest_long])
-    @alert = Alert.new(params[:dest_lat], params[:dest_long])
-    @astronomy = Astronomy.new(params[:dest_lat], params[:dest_long])
-    @condition = Condition.new(params[:dest_lat], params[:dest_long])
-    @hourly = Hourly.new(params[:dest_lat], params[:dest_long])
+    # @alert = Alert.new(params[:dest_lat], params[:dest_long])
+    # @astronomy = Astronomy.new(params[:dest_lat], params[:dest_long])
+    # @condition = Condition.new(params[:dest_lat], params[:dest_long])
+    # @hourly = Hourly.new(params[:dest_lat], params[:dest_long])
     @rated_places = []
     @favorite_nearby_places = []
     nearby_origin = Place.within(0.25, :origin => [params[:origin_lat], params[:origin_long]])

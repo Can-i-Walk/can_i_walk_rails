@@ -7,7 +7,7 @@ json.nearby_destinations @rated_places.each do |place|
 end
 
 # json.alerts @alert.alerts
-json.sunrise @astronomy.sunrise
-json.sunset @astronomy.sunset
-json.temperature @condition.temperature
+# json.sunrise @astronomy.sunrise
+# json.sunset @astronomy.sunset
+# json.temperature @condition.temperature
 # json.hourly_forcast @hourly
