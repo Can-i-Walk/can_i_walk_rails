@@ -80,18 +80,20 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
 
     if @place.update(place_params)
-      head :no_content
+      render :json => {:success => true}
     else
-      render json: @place.errors, status: :unprocessable_entity
+      render :json => {:success => false, :errors => ["Update failed."]}
+      # render json: @place.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /places/1
   # DELETE /places/1.json
   def destroy
-    @place.destroy
-
-    head :no_content
+    if @place.destroy
+      render :json => {:success => true}
+    else
+      render :json => {:success => false, :errors => ["Delete failed."]}
   end
 
   private
