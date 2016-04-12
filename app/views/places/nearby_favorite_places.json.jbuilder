@@ -13,10 +13,14 @@ end
 # @condition.conditions
 # @hourly_forcast.temperature
 
-json.weather_info(@weather_info).each do |w|
-  json.alerts w.alerts.alerts
-  json.surnise w.astronomy.sunrise
-  json.sunset w.astronomy.sunset
-  json.temperature w.conditions.temperature
-  json.hourly_forcast w.hourly
+json.forecast(@forecast) do |f|
+  json.extract! f
 end
+
+# json.weather_info(@weather_info).each do |w|
+#   json.alerts w.alerts.alerts
+#   json.surnise w.astronomy.sunrise
+#   json.sunset w.astronomy.sunset
+#   json.temperature w.conditions.temperature
+#   json.hourly_forcast w.hourly
+# end
