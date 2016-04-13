@@ -50,7 +50,6 @@ class AuthenticationController < ApplicationController
       if @current_user.email_confirmed
         @active_token = @current_user.generate_token
         @current_user.save!
-        render json: @current_user
       else
         confirm_token = @current_user.confirm_token
         RegistrationConfirmationJob.perform_later(@current_user.email, confirm_token)
