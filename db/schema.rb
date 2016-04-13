@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413151034) do
+ActiveRecord::Schema.define(version: 20160413154957) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 20160413151034) do
   add_index "trips", ["user_id"], name: "index_trips_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.text     "token"
     t.string   "email"
     t.string   "password_digest"
     t.string   "name"
