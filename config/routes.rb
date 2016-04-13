@@ -4,11 +4,12 @@ Rails.application.routes.draw do
 
   get 'authentication/oauth'
   get 'authentication/password_reset'
+  put 'authenticaiton/password_update'
   get 'authentication/confirmation'
   get 'authentication/decline'
   # get 'authentication/login'
   put 'authentication/login'
-  put 'authentication/logout'
+  delete 'authentication/logout'
 
   get 'users/dashboard', defaults: {format: 'json'}
   get 'places/map_info', defaults: {format: 'json'}

@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :update, :destroy]
-  before_action :authenticate, except: [:index]
+  before_action :authenticate
 
   # GET /places
   # GET /places.json
