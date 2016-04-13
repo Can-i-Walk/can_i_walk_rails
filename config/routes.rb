@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'authentication/password_reset'
   get 'authentication/confirmation'
   get 'authentication/decline'
-  # get 'authentication/login'
   put 'authentication/login'
   put 'authentication/logout'
 
