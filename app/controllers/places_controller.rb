@@ -16,16 +16,22 @@ class PlacesController < ApplicationController
   # end
 
   def map_info
-    # @distance = (params[:distance])
-    # @weather_info = WeatherInfo.new(params[:dest_lat], params[:dest_long])
-    @alert = Alert.new(params[:dest_lat], params[:dest_long])
-    @astronomy = Astronomy.new(params[:dest_lat], params[:dest_long])
-    @condition = Condition.new(params[:dest_lat], params[:dest_long])
-    @hourly = Hourly.new(params[:dest_lat], params[:dest_long])
+    origin_lat = params[:origin_lat]
+    origin_long = params[:origin_long]
+    dest_lat = params[:dest_lat]
+    dest_long = params[:dest_long]
+    @alert = Alert.new(dest_lat, dest_long)
+    @astronomy = Astronomy.new(dest_lat, dest_long)
+    @condition = Condition.new(dest_lat, dest_long)
+    @hourly = Hourly.new(dest_lat, dest_long)
     @rated_places = []
     @favorite_nearby_places = []
-    nearby_origin = Place.within(0.25, :origin => [params[:origin_lat], params[:origin_long]])
-    nearby_destination = Place.within(0.25, :origin => [params[:dest_lat], params[:dest_long]])
+    @ease_average = Rating.ease_average(dest_lat, dest_long)
+    @enjoyability_average = Rating.enjoyability_average(dest_lat, dest_long)
+    @accessibility_average = Rating.accessibility_average(dest_lat, dest_long)
+    @safety_average = Rating.safety_average(dest_lat, dest_long)
+    nearby_origin = Place.within(0.25, :origin => [origin_lat, origin_long])
+    nearby_destination = Place.within(0.25, :origin => [dest_lat, dest_long])
     # nearby_origin = nearby_origin.group(:place_name)
     # nearby_destination = nearby_destination.group(:place_name)
 
@@ -44,8 +50,8 @@ class PlacesController < ApplicationController
 
   def places_of_interest
     @favorite_nearby_places = []
-    nearby_origin = Place.within(0.25, :origin => [params[:origin_lat], params[:origin_long]])
-    nearby_destination = Place.within(0.25, :origin => [params[:dest_lat], params[:dest_long]])
+    nearby_origin = Place.within(0.25, :origin => [origin_lat, origin_long])
+    nearby_destination = Place.within(0.25, :origin => [dest_lat, dest_long])
     # nearby_origin = nearby_origin.group(:place_name)
     # nearby_destination = nearby_destination.group(:place_name)
 
