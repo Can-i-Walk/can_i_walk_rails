@@ -19,10 +19,10 @@ class PlacesController < ApplicationController
     dest_lat = params[:dest_lat]
     dest_long = params[:dest_long]
 
-    @alert = Alert.new(dest_lat, dest_long)
-    @astronomy = Astronomy.new(dest_lat, dest_long)
-    @condition = Condition.new(dest_lat, dest_long)
-    @hourly = Hourly.new(dest_lat, dest_long)
+    # @alert = Alert.new(dest_lat, dest_long)
+    # @astronomy = Astronomy.new(dest_lat, dest_long)
+    # @condition = Condition.new(dest_lat, dest_long)
+    # @hourly = Hourly.new(dest_lat, dest_long)
 
     @rated_places = []
     @favorite_nearby_places = []
