@@ -49,6 +49,11 @@ class PlacesController < ApplicationController
   end
 
   def places_of_interest
+    origin_lat = params[:origin_lat]
+    origin_long = params[:origin_long]
+    dest_lat = params[:dest_lat]
+    dest_long = params[:dest_long]
+
     @favorite_nearby_places = []
 
     nearby_origin = Place.within(0.25, :origin => [origin_lat, origin_long])
