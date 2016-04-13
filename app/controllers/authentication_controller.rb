@@ -48,7 +48,7 @@ class AuthenticationController < ApplicationController
     @current_user = User.find_by_email(params[:email])
     if @current_user && @current_user.authenticate(params[:password])
       if @current_user.email_confirmed
-        @current_user.generate_token
+        @active_token = @current_user.generate_token
         @current_user.save!
         render json: @current_user
       else
