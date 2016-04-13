@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy, :dashboard]
+  before_action :authenticate, except: [:create]
 
   def index
     @users = User.all
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+
   end
 
   # POST /users
@@ -43,7 +45,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    if @user.destroy
+    if @user.destroy!
       render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["Delete failed."]}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407044330) do
+ActiveRecord::Schema.define(version: 20160413154957) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 20160407044330) do
   add_index "ratings", ["place_id"], name: "index_ratings_on_place_id"
   add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
 
+  create_table "session_tokens", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "trip_points", force: :cascade do |t|
     t.integer  "place_id"
     t.integer  "trip_id"
@@ -80,7 +87,6 @@ ActiveRecord::Schema.define(version: 20160407044330) do
   add_index "trips", ["user_id"], name: "index_trips_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.text     "token"
     t.string   "email"
     t.string   "password_digest"
     t.string   "name"
