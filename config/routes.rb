@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   put 'authenticaiton/password_update'
   get 'authentication/confirmation'
   get 'authentication/decline'
-  put 'authentication/login'
+  post 'authentication/login'
   delete 'authentication/logout'
 
   get 'users/dashboard', defaults: {format: 'json'}
