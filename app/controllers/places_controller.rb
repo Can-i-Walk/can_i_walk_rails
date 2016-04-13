@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :update, :destroy]
-  before_action :authenticate, except: [:index]
+  before_action :authenticate
 
   # GET /places
   # GET /places.json
@@ -20,10 +20,10 @@ class PlacesController < ApplicationController
     dest_lat = params[:dest_lat]
     dest_long = params[:dest_long]
 
-    @alert = Alert.new(dest_lat, dest_long)
-    @astronomy = Astronomy.new(dest_lat, dest_long)
-    @condition = Condition.new(dest_lat, dest_long)
-    @hourly = Hourly.new(dest_lat, dest_long)
+    # @alert = Alert.new(dest_lat, dest_long)
+    # @astronomy = Astronomy.new(dest_lat, dest_long)
+    # @condition = Condition.new(dest_lat, dest_long)
+    # @hourly = Hourly.new(dest_lat, dest_long)
 
     @rated_places = []
     @favorite_nearby_places = []
@@ -50,6 +50,11 @@ class PlacesController < ApplicationController
   end
 
   def places_of_interest
+    origin_lat = params[:origin_lat]
+    origin_long = params[:origin_long]
+    dest_lat = params[:dest_lat]
+    dest_long = params[:dest_long]
+
     @favorite_nearby_places = []
 
     nearby_origin = Place.within(0.25, :origin => [origin_lat, origin_long])

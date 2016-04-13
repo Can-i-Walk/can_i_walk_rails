@@ -27,9 +27,8 @@ class User < ActiveRecord::Base
   end
 
   def generate_token
-    self.token = SecureRandom.urlsafe_base64.to_s
+    SessionToken.create(user_id: id, token: SecureRandom.urlsafe_base64.to_s)
   end
-
 
   private def confirmation_token
     if self.confirm_token.blank?
