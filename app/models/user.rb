@@ -1,6 +1,7 @@
 require 'securerandom'
 
 class User < ActiveRecord::Base
+  has_many :session_tokens
   has_many :ratings
   has_many :trips
   has_many :places
