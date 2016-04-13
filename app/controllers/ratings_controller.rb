@@ -21,7 +21,7 @@ class RatingsController < ApplicationController
   def create
     @rating = Rating.new(user_id: params[:user_id], place_id: params[:place_id], ease_rating: params[:ease_rating], safety_rating: params[:safety_rating], enjoyability_rating: params[:enjoyability_rating], accessibility_rating: params[:accessibility_rating], comment: params[:comment])
     if @rating.save
-      render json: @rating, status: :created, location: @rating
+      render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["Rating creation failed."]}
     end
@@ -33,7 +33,7 @@ class RatingsController < ApplicationController
     @rating = Rating.find(params[:id])
 
     if @rating.update(rating_params)
-      render :json => {:success => true, :errors => ["Update successful."]}
+      render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["Rating update failed."]}
     end

@@ -72,12 +72,13 @@ class PlacesController < ApplicationController
   # POST /places
   # POST /places.json
   def create
-    @place = Place.new(place_params)
+    @place = Place.new(user_id: params[:user_id], place_name: params[:place_name], latitude: params[:latitude], longitude: params[:longitude])
 
     if @place.save
-      render :show, status: :created, location: @place
+      @trip_point = TripPoint.new(trip_id: params[:trip_id], place_id: @place.id, place_type: "Favorite Places")
+      render :json => {:success => true}
     else
-      render json: @place.errors, status: :unprocessable_entity
+      render :json => {:success => false, :errors => ["Creation failed."]}
     end
   end
 
