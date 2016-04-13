@@ -11,7 +11,7 @@ class AuthenticationController < ApplicationController
       PasswordResetJob.perform_later(forgetful_user.email, forgetful_user.id)
       render json: forgetful_user
     else
-      render json: nil_user
+      render :json => {:success => false, :errors => ["No user found with that email."]}
     end
   end
 
@@ -19,11 +19,9 @@ class AuthenticationController < ApplicationController
     user = User.find_by_confirm_token(params[:confirm_token])
     if user
       user.email_activate
-      # flash[:success] = "Welcome to the Sample App! Your email has been confirmed. Please sign in to continue."
       redirect_to "https://intense-inferno-3546.firebaseapp.com/#/login"
     else
-      # flash[:error] = "Sorry. User does not exist"
-      # redirect_to root_url
+      render :json => {:success => false, :errors => ["Confirmation failed."]}
     end
   end
 
@@ -31,31 +29,36 @@ class AuthenticationController < ApplicationController
     user = User.find_by_confirm_token(params[:confirm_token])
     if user
       user.destroy!
-      # flash[:success] = "Your email has been successfuly removed from our records."
-      # redirect_to root_url
     else
-      # flash[:error] = "Sorry. User does not exist"
-      render json: user
+      render :json => {:success => false, :errors => ["Decline failed."]}
     end
   end
 
   def login
-  @current_user = User.find_by_email(params[:email])
+    @current_user = User.find_by_email(params[:email])
     if @current_user && @current_user.authenticate(params[:password])
       if @current_user.email_confirmed
         @current_user.generate_token
         @current_user.save!
         render json: @current_user
+      else
+        confirm_token = @current_user.confirm_token
+        RegistrationConfirmationJob.perform_later(@current_user.email, confirm_token)
+        render :json => {:success => false, :errors => ["Please confirm your email to login."]}
       end
     else
-      render json: "Wrong email and password combination. Please try again."
+      render :json => {:success => false, :errors => ["Login failed."]}
     end
   end
 
   def logout
-    @current_user = User.find_by_email(params[:email])
+    @current_user = User.find(params[:id])
     @current_user.token = nil
     @current_user.save!
-    render json: "Logout Successful"
+    if @current_user.token == nil
+      render :json => {:success => true}
+    else
+      render :json => {:success => false, :errors => ["Logout failed."]}
+    end
   end
 end

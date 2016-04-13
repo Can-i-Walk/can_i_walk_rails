@@ -1,15 +1,33 @@
-<h1>ConfirmationMailer#confirm_registration</h1>
+<div class="confirm-email-container">
+   <h1>ConfirmationMailer</h1>
 
-<p>
-  <%= @greeting %>,
-</p>
+   <div class="confirm">
+      Thank you for registering with <span style="color: #CD5334;
+      font-weight: bold;">CAN</span><span style="color: #17BEBB;
+      font-weight: bold;"><%="<i>"%></span><span style="color: #CD5334;
+      font-weight: bold;">WALK</span>! Select confirm to complete your registration.
+      <div style="
+      text-decoration: none;
+      background-color: #17BEBB;
+      border: 2px solid #17BEBB;
+      border-radius: 2px;
+      color: white !important;
+      width: 150px;
+      text-align: center">
+         <%= link_to "Confirm", :controller => "authentication", :action => "confirmation", :confirm_token => @confirm_token %>
+      </div>
+   </div>
 
-<div>
-  Thank you for registering with <%= "CAN<i>WALK" %>! Select confirm to complete your registration.
-  <%= link_to "Confirm", :controller => "authentication", :action => "confirmation", :confirm_token => @confirm_token %>
-</div>
-
-<div>
-  If you did not register with us, we apologize. Select decline to remove yourself from our email list:
-  <%= link_to "Decline", :controller => "authentication", :action => "decline", :confirm_token => @confirm_token %>
+   <div class="decline">
+     If you did not register with us, we apologize. Select decline to remove yourself from our email list:
+     <div style="text-decoration: none;
+     background-color: #CD5334;
+     border: 2px solid #CD5334;
+     border-radius: 2px;
+     color: white !important;
+     width: 150px;
+     text-align: center">
+        <%= link_to "Decline", :controller => "authentication", :action => "decline", :confirm_token => @confirm_token %>
+     </div>
+   </div>
 </div>

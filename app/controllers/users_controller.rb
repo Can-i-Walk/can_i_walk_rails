@@ -23,8 +23,8 @@ class UsersController < ApplicationController
       confirm_token = @user.confirm_token
       RegistrationConfirmationJob.perform_later(@user.email, confirm_token)
     else
-      flash[:error] = "Email already taken."
-      render json: @user.errors, status: :unprocessable_entity
+      render :json => {:success => false, :errors => ["User creation failed."]}
+      # render json: @user.errors, status: :unprocessable_entity
     end
   end
 
@@ -34,17 +34,21 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
+      render :json => {:success => true}
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render :json => {:success => false, :errors => ["Update failed."]}
+      # render json: @user.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-
-    head :no_content
+    if @user.destroy
+      render :json => {:success => true}
+    else
+      render :json => {:success => false, :errors => ["Delete failed."]}
+    end
   end
 
   private

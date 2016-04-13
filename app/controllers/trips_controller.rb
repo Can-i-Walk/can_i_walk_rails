@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:show, :update, :destroy]
+  before_action :set_trip, only: [:show, :update, :destroy, :reject_trip]
   before_action :authenticate, except: [:index]
 
   # GET /trips
@@ -16,10 +16,13 @@ class TripsController < ApplicationController
     render json: @trip
   end
 
-  # if Place.where(place_name: params[:origin_name] || params[:dest_name])
-  #   Place.where(place_name: params[:origin_name] || params[:dest_name]).first.count += 1
-  # else
-  #   save
+  def reject_trip
+    # user = User.find(params[:user_id])
+    # latest_trip = user.trips.last
+    # @trip = Trip.find(params[:id])
+    @trip.completion = params[:completion]
+    @trip.save
+  end
 
   # POST /trips
   # POST /trips.json
@@ -32,10 +35,9 @@ class TripsController < ApplicationController
       @destination_point = TripPoint.new(trip_id: @trip.id, place_id: @destination.id, place_type: "Ending")
       @origin_point.save
       @destination_point.save
-      # redirect_to controller: 'places', action: 'nearby_favorite_places', distance: params[:distance], origin_lat: params[:origin_lat], origin_long: params[:origin_long], dest_lat: params[:dest_lat], dest_long: params[:dest_long]
-      # render json: @trip, status: :created, location: @trip
     else
-      render json: @trip.errors, status: :unprocessable_entity
+      render :json => {:success => false, :errors => ["Trip creation failed."]}
+      # render json: @trip.errors, status: :unprocessable_entity
     end
   end
 
@@ -45,18 +47,21 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
 
     if @trip.update(trip_params)
-      head :no_content
+      render :json => {:success => true}
     else
-      render json: @trip.errors, status: :unprocessable_entity
+      render :json => {:success => false, :errors => ["Trip update failed."]}
+      # render json: @trip.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /trips/1
   # DELETE /trips/1.json
   def destroy
-    @trip.destroy
-
-    head :no_content
+    if @trip.destroy
+      render :json => {:success => true}
+    else
+      render :json => {:success => false, :errors => ["Delete failed."]}
+    end
   end
 
   private

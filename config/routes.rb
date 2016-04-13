@@ -7,14 +7,18 @@ Rails.application.routes.draw do
   get 'authentication/confirmation'
   get 'authentication/decline'
   # get 'authentication/login'
-  post 'authentication/login'
-  post 'authentication/logout'
+  put 'authentication/login'
+  put 'authentication/logout'
 
   get 'users/dashboard', defaults: {format: 'json'}
-  get 'places/nearby_favorite_places', defaults: {format: 'json'}
+  get 'places/map_info', defaults: {format: 'json'}
+  get 'places/places_of_interest', defaults: {format: 'json'}
   resources :ratings, except: [:new, :edit]
   resources :places, except: [:new, :edit]
   resources :trips, except: [:new, :edit]
+  # resources :trips do
+  #   put :reject_trip, on: :member
+  # end
   resources :users, except: [:new, :edit]
 
 
