@@ -9,31 +9,31 @@ class PlacesController < ApplicationController
 
   # GET /places/1
   # GET /places/1.json
-
-
-  # def weather
-  #   @weather = WeatherInfo.new(params[:latitude], params[:longitude])
-  # end
+  def show
+    render json: @place
+  end
 
   def map_info
     origin_lat = params[:origin_lat]
     origin_long = params[:origin_long]
     dest_lat = params[:dest_lat]
     dest_long = params[:dest_long]
+
     @alert = Alert.new(dest_lat, dest_long)
     @astronomy = Astronomy.new(dest_lat, dest_long)
     @condition = Condition.new(dest_lat, dest_long)
     @hourly = Hourly.new(dest_lat, dest_long)
+
     @rated_places = []
     @favorite_nearby_places = []
+
     @ease_average = Rating.ease_average(dest_lat, dest_long)
     @enjoyability_average = Rating.enjoyability_average(dest_lat, dest_long)
     @accessibility_average = Rating.accessibility_average(dest_lat, dest_long)
     @safety_average = Rating.safety_average(dest_lat, dest_long)
+
     nearby_origin = Place.within(0.25, :origin => [origin_lat, origin_long])
     nearby_destination = Place.within(0.25, :origin => [dest_lat, dest_long])
-    # nearby_origin = nearby_origin.group(:place_name)
-    # nearby_destination = nearby_destination.group(:place_name)
 
     nearby_destination.each do |n|
       @rated_places << n if n.trip_points.where(place_type: "Ending Point").first
@@ -50,10 +50,9 @@ class PlacesController < ApplicationController
 
   def places_of_interest
     @favorite_nearby_places = []
+
     nearby_origin = Place.within(0.25, :origin => [origin_lat, origin_long])
     nearby_destination = Place.within(0.25, :origin => [dest_lat, dest_long])
-    # nearby_origin = nearby_origin.group(:place_name)
-    # nearby_destination = nearby_destination.group(:place_name)
 
     nearby_origin.each do |n|
       @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite Places").first
@@ -62,10 +61,6 @@ class PlacesController < ApplicationController
     nearby_destination.each do |n|
       @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite Places").first
     end
-  end
-
-  def show
-    render json: @place
   end
 
   # POST /places
