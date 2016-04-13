@@ -1,5 +1,5 @@
 class AuthenticationController < ApplicationController
-  before_action :authenticate, only: [:password_reset]
+  before_action :authenticate, only: [:logout]
 
   def oauth
   end
@@ -12,6 +12,16 @@ class AuthenticationController < ApplicationController
       render json: forgetful_user
     else
       render :json => {:success => false, :errors => ["No user found with that email."]}
+    end
+  end
+
+  def password_update
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      render :json => {:success => true}
+    else
+      render :json => {:success => false, :errors => ["Password update failed."]}
     end
   end
 
@@ -38,7 +48,7 @@ class AuthenticationController < ApplicationController
     @current_user = User.find_by_email(params[:email])
     if @current_user && @current_user.authenticate(params[:password])
       if @current_user.email_confirmed
-        @current_user.generate_token
+        @active_token = @current_user.generate_token
         @current_user.save!
         render json: @current_user
       else
@@ -52,13 +62,13 @@ class AuthenticationController < ApplicationController
   end
 
   def logout
-    @current_user = User.find(params[:id])
-    @current_user.token = nil
-    @current_user.save!
-    if @current_user.token == nil
+    @active_token = SessionToken.find_by(token: params[:token])
+    if @active_token
+      @active_token.destroy!
       render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["Logout failed."]}
+      # Or say, "Already logged out."
     end
   end
 end

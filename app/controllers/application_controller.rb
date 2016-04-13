@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   private def authenticate
-    @current_user = User.find_by(token: params[:token])
-    unless @current_user
+    @active_token = SessionToken.find_by(token: params[:token])
+    unless @active_token
       render json: "User must be logged in!"
     end
   end

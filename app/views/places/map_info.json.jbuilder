@@ -13,9 +13,9 @@ json.average_ratings do
   json.safety_average @safety_average
 end
 
-json.alerts @alert.alerts
-json.sunrise @astronomy.sunrise
-json.sunset @astronomy.sunset
-json.temperature @condition.temperature
-json.current_weather @condition.weather
-json.weather_icon @condition.weather_icon
+# json.alerts @alert.alerts
+# json.sunrise @astronomy.sunrise
+# json.sunset @astronomy.sunset
+# json.temperature @condition.temperature
+# json.current_weather @condition.weather
+# json.weather_icon @condition.weather_icon
