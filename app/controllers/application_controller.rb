@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   private def authenticate
     @active_token = SessionToken.find_by(token: params[:token])
     unless @active_token
-      render json: "User must be logged in!"
+      render :json => {:success => false, :errors => ["User must be logged in."]}
     end
   end
 end
