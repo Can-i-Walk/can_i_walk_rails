@@ -11,6 +11,10 @@ json.average_ratings do
   json.enjoyability_average @enjoyability_average
   json.accessibility_average @accessibility_average
   json.safety_average @safety_average
+  json.cane_accessibility @cane_average
+  json.wheelchair_accessibility @wheelchair_average
+  json.walker_accessibility @walker_average
+  json.scooter_accesibility @scooter_average
 end
 
 # json.alerts @alert.alerts

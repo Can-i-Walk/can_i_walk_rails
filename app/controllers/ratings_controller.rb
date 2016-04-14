@@ -19,7 +19,8 @@ class RatingsController < ApplicationController
   # POST /ratings
   # POST /ratings.json
   def create
-    @rating = Rating.new(user_id: params[:user_id], place_id: params[:place_id], ease_rating: params[:ease_rating], safety_rating: params[:safety_rating], enjoyability_rating: params[:enjoyability_rating], accessibility_rating: params[:accessibility_rating], comment: params[:comment])
+    place_id = Trip.find(params[:trip_id]).trip_points.where(place_type: "Ending Point").last.place.id
+    @rating = Rating.new(user_id: params[:user_id], place_id: place_id, ease_rating: params[:ease_rating], safety_rating: params[:safety_rating], enjoyability_rating: params[:enjoyability_rating], accessibility_rating: params[:accessibility_rating], comment: params[:comment])
     if @rating.save
       render :json => {:success => true}
     else

@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # id: 1
-User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "Geoff", max_distance: 3.0, email_confirmed: true)
+User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "Geoff", max_distance: 3.0, email_confirmed: true, accessibility_type: "Cane")
 # id: 2
 User.create!(email: "greg.turmel@mail.com", password: "password", name: "Greg", max_distance: 10.0)
 # User.create!(email: "jeremy.smith@mail.com", password: "password", name: "Jeremy", max_distance: 15.0)
