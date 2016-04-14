@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :places
   has_many :trip_points, through: :trips
 
-  # before_create :generate_token
   before_create :confirmation_token
 
   validates :email, presence: true, uniqueness: true

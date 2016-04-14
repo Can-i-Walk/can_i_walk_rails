@@ -1,23 +1,20 @@
 class AuthenticationController < ApplicationController
   before_action :authenticate, only: [:logout]
 
-  def oauth
-  end
-
   def password_reset
-    nil_user = "No email found."
-    forgetful_user = User.find_by(email: params[:email])
-    if forgetful_user
-      PasswordResetJob.perform_later(forgetful_user.email, forgetful_user.id)
-      render json: forgetful_user
+    current_user = User.find_by(email: params[:email])
+    if current_user
+      token = current_user.generate_token.token
+      PasswordResetJob.perform_later(current_user.email, token)
+      render :json => current_user
+      # render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["No user found with that email."]}
     end
   end
 
   def password_update
-    @user = User.find(params[:id])
-
+    @user = User.joins(:session_tokens).find_by("session_tokens.token = params[:token]")
     if @user.update(user_params)
       render :json => {:success => true}
     else

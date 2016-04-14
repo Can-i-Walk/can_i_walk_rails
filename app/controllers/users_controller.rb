@@ -25,7 +25,6 @@ class UsersController < ApplicationController
       RegistrationConfirmationJob.perform_later(@user.email, confirm_token)
     else
       render :json => {:success => false, :errors => ["User creation failed."]}
-      # render json: @user.errors, status: :unprocessable_entity
     end
   end
 
@@ -38,7 +37,6 @@ class UsersController < ApplicationController
       render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["Update failed."]}
-      # render json: @user.errors, status: :unprocessable_entity
     end
   end
 
@@ -60,6 +58,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:token, :email, :password, :password_confirmation, :name, :max_distance, :email_confirmed, :confirm_token)
+      params.require(:user).permit(:email, :password, :password_confirmation, :name, :max_distance, :email_confirmed, :confirm_token)
     end
 end
