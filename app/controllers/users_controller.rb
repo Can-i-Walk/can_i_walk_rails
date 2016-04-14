@@ -33,7 +33,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    if @user.update(user_params)
+    # if @user.update(user_params)
+    if @user.update(name: params[:name], password: params[:password], email: params[:email], max_distance: params[:max_distance], accessibility_type: params[:accessibility_type])
       render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["Update failed."]}
