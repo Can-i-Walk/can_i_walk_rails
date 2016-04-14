@@ -9,6 +9,10 @@ class Rating < ActiveRecord::Base
     end
   end
 
+  lat = 35.993146
+
+  long = -78.897525
+
   def self.average_wheelchair(lat, long)
     ratings = Place.within(0.25, :origin => [lat, long]).joins(user: :ratings).where('users.accessibility_type = "Wheelchair"').average("ratings.accessibility_rating")
     if ratings
