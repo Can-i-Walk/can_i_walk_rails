@@ -4,7 +4,7 @@ class AuthenticationController < ApplicationController
   def password_reset
     current_user = User.find_by(email: params[:email])
     if current_user
-      token = current_user.generate_token
+      token = current_user.generate_token.token
       PasswordResetJob.perform_later(current_user.email, token)
       render :json => current_user
       # render :json => {:success => true}
