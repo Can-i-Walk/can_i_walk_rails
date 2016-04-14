@@ -81,6 +81,7 @@ class PlacesController < ApplicationController
 
     if @place.save
       @trip_point = TripPoint.new(trip_id: params[:trip_id], place_id: @place.id, place_type: "Favorite Places")
+      @trip_point.save!
       render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["Creation failed."]}
