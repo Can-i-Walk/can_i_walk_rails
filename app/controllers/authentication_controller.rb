@@ -6,8 +6,8 @@ class AuthenticationController < ApplicationController
     if current_user
       token = current_user.generate_token.token
       PasswordResetJob.perform_later(current_user.email, token)
-      render :json => current_user
-      # render :json => {:success => true}
+      # render :json => current_user
+      render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["No user found with that email."]}
     end
