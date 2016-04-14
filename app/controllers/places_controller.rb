@@ -32,10 +32,10 @@ class PlacesController < ApplicationController
     @enjoyability_average = Rating.enjoyability_average(dest_lat, dest_long)
     @safety_average = Rating.safety_average(dest_lat, dest_long)
     @accessibility_average = Rating.accessibility_average(dest_lat, dest_long)
-    @cane_average = Rating.average_cane(dest_lat, dest_long)
-    @wheelchair_average = Rating.average_wheelchair(dest_lat, dest_long)
-    @walker_average = Rating.average_walker(dest_lat, dest_long)
-    @scooter_average = Rating.average_scooter(dest_lat, dest_long)
+    # @cane_average = Rating.average_cane(dest_lat, dest_long)
+    # @wheelchair_average = Rating.average_wheelchair(dest_lat, dest_long)
+    # @walker_average = Rating.average_walker(dest_lat, dest_long)
+    # @scooter_average = Rating.average_scooter(dest_lat, dest_long)
 
 
     nearby_origin = Place.within(0.25, :origin => [origin_lat, origin_long])
