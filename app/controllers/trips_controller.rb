@@ -37,7 +37,6 @@ class TripsController < ApplicationController
       @destination_point.save
     else
       render :json => {:success => false, :errors => ["Trip creation failed."]}
-      # render json: @trip.errors, status: :unprocessable_entity
     end
   end
 
@@ -50,7 +49,6 @@ class TripsController < ApplicationController
       render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["Trip update failed."]}
-      # render json: @trip.errors, status: :unprocessable_entity
     end
   end
 

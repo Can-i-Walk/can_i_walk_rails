@@ -97,7 +97,6 @@ class PlacesController < ApplicationController
       render :json => {:success => true}
     else
       render :json => {:success => false, :errors => ["Update failed."]}
-      # render json: @place.errors, status: :unprocessable_entity
     end
   end
 
