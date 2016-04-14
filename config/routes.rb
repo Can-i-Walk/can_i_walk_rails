@@ -2,12 +2,11 @@ Rails.application.routes.draw do
 
   root 'authentication#oauth'
 
-  get 'authentication/oauth'
   get 'authentication/password_reset'
   put 'authenticaiton/password_update'
   get 'authentication/confirmation'
   get 'authentication/decline'
-  put 'authentication/login'
+  post 'authentication/login'
   delete 'authentication/logout'
 
   get 'users/dashboard', defaults: {format: 'json'}
