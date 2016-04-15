@@ -1,5 +1,5 @@
 json.user [@user] do |u|
-  json.extract! u, :id, :token, :email, :name, :max_distance
+  json.extract! u, :id, :email, :name, :max_distance, :accessibility_type
   json.places @user_favorites.each do |f|
     json.extract! f, :id, :latitude, :longitude, :place_name
   end
