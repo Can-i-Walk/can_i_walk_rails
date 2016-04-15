@@ -42,15 +42,15 @@ class PlacesController < ApplicationController
     nearby_destination = Place.within(0.25, :origin => [dest_lat, dest_long])
 
     nearby_destination.each do |n|
-      @rated_places << n if n.trip_points.where(place_type: "Ending Point").first
+      @rated_places << n if n.trip_points.where(place_type: "Destination").first
     end
 
     nearby_origin.each do |n|
-      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite Places").first
+      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite").first
     end
 
     nearby_destination.each do |n|
-      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite Places").first
+      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite").first
     end
   end
 
@@ -66,11 +66,11 @@ class PlacesController < ApplicationController
     nearby_destination = Place.within(0.25, :origin => [dest_lat, dest_long])
 
     nearby_origin.each do |n|
-      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite Places").first
+      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite").first
     end
 
     nearby_destination.each do |n|
-      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite Places").first
+      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite").first
     end
   end
 
@@ -80,7 +80,7 @@ class PlacesController < ApplicationController
     @place = Place.new(user_id: params[:user_id], place_name: params[:place_name], latitude: params[:latitude], longitude: params[:longitude])
 
     if @place.save
-      @trip_point = TripPoint.new(trip_id: params[:trip_id], place_id: @place.id, place_type: "Favorite Places")
+      @trip_point = TripPoint.new(trip_id: params[:trip_id], place_id: @place.id, place_type: "Favorite")
       @trip_point.save!
       render :json => {:success => true}
     else

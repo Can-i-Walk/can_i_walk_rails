@@ -24,8 +24,8 @@ class UserTest < ActiveSupport::TestCase
     trips_array = []
     trip_1 = trips(:duke_garden)
     trip_2 = trips(:toast)
-    trip_point_1 = trip_points(:starting)
-    trip_point_2 = trip_points(:ending)
+    trip_point_1 = trip_points(:origin)
+    trip_point_2 = trip_points(:destination)
     trip_point_3 = trip_points(:favorite)
 
     trips_array << trip_1
@@ -37,7 +37,7 @@ class UserTest < ActiveSupport::TestCase
     trip_1.trip_points << trip_point_3
 
     assert_equal user.trips.find_by(trip_name: "Duke Gardens"), trips_array.first
-    refute_equal user.trip_points.find_by(place_type: "Starting Point"), nil
+    refute_equal user.trip_points.find_by(place_type: "Origin"), nil
     assert_equal user.trip_points, trip_1.trip_points
   end
 
@@ -46,8 +46,8 @@ class UserTest < ActiveSupport::TestCase
     trips_array = []
     trip_1 = trips(:duke_garden)
     trip_2 = trips(:toast)
-    trip_point_1 = trip_points(:starting)
-    trip_point_2 = trip_points(:ending)
+    trip_point_1 = trip_points(:origin)
+    trip_point_2 = trip_points(:destination)
     trip_point_3 = trip_points(:favorite)
     duke_gardens = places(:duke)
     japanese_gardens = places(:japanese)
@@ -69,7 +69,7 @@ class UserTest < ActiveSupport::TestCase
 
     assert_equal user.trips.find_by(trip_name: "Duke Gardens"), trips_array.first
     assert_equal user.trip_points, trip_1.trip_points
-    assert_equal user.trip_points.find_by(place_type: "Ending Point").place.place_name, duke_gardens.place_name
+    assert_equal user.trip_points.find_by(place_type: "Destination").place.place_name, duke_gardens.place_name
     assert_equal user.ratings.find_by(place: "duke"), duke_gardens.ratings.find_by(place: "duke")
   end
 end

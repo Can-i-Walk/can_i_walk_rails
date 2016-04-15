@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def favorite_places
-    trip_points.where(place_type: "Favorite Places").map &:place
+    trip_points.where(place_type: "Favorite").map &:place
   end
 
   def generate_token

@@ -7,8 +7,8 @@ class PlaceTest < ActiveSupport::TestCase
 
   test "places have many trip_points" do
     place = places(:tiy)
-    starting_point = trip_points(:starting)
-    place.trip_points << starting_point
-    assert_equal "Starting Point", place.trip_points.first.place_type
+    origin = trip_points(:origin)
+    place.trip_points << origin
+    assert_equal "Origin", place.trip_points.first.place_type
   end
 end
