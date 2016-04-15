@@ -15,7 +15,8 @@ class AuthenticationController < ApplicationController
 
   def password_update
     token = params[:token]
-    user = User.joins(:session_tokens).find_by("session_tokens.token = token")
+    user = SessionToken.find_by(token: token).user
+    # user = User.joins(:session_tokens).find_by("session_tokens.token = #{dog}")
     if user.update(password: params[:password])
       render :json => {:success => true}
     else
