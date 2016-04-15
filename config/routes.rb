@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'authentication#oauth'
 
   get 'authentication/password_reset'
-  put 'authenticaiton/password_update'
+  put 'authentication/password_update'
   get 'authentication/confirmation'
   get 'authentication/decline'
   post 'authentication/login'
