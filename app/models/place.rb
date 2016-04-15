@@ -15,4 +15,9 @@ class Place < ActiveRecord::Base
     within(radius, :origin => [origin_lat, origin_long])
   end
 
+  def self.suggest_places(max_distance, origin_lat, origin_long)
+    range = ((max_distance/3).round)..max_distance
+    Place.in_range(range, :origin => [origin_lat, origin_long]).joins(:trip_points).where("place_type = 'Destination'")
+  end
+
 end

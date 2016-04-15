@@ -40,9 +40,11 @@ class TripsController < ApplicationController
     end
   end
 
-  def destination_generator(max_distance = 2.0, origin_lat, origin_long)
-    range = ((max_distance/3)..max_distance)
-    suggestion = Place.in_range((1..3), :origin => [origin_lat, origin_long]).joins(:trip_points).where("place_type = 'Destination'")
+  def destination_generator
+    max_distance = params[:max_distance].to_f
+    origin_lat = params[:latitude]
+    origin_long = params[:longitude]
+    @suggestion = Place.suggest_places(max_distance, origin_lat, origin_long)
   end
 
   # PATCH/PUT /trips/1

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'users/dashboard', defaults: {format: 'json'}
   get 'places/map_info', defaults: {format: 'json'}
   get 'places/places_of_interest', defaults: {format: 'json'}
+  get 'trips/destination_generator', defaults: {format: 'json'}
   resources :ratings, except: [:new, :edit]
   resources :places, except: [:new, :edit]
   resources :trips, except: [:new, :edit]
