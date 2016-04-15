@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @user_favorites = @user.favorite_places
+    @user_trips = @user.trips
+    # @user_favorites = @user.favorite_places
   end
 
   # GET /users/1
