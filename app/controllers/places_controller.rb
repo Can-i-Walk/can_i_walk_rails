@@ -22,6 +22,7 @@ class PlacesController < ApplicationController
 
     @rated_places = []
     @favorite_nearby_places = []
+    @comments = []
 
     @ease_average = Rating.ease_average(dest_lat, dest_long)
     @enjoyability_average = Rating.enjoyability_average(dest_lat, dest_long)
@@ -38,6 +39,12 @@ class PlacesController < ApplicationController
 
     nearby_destination.each do |n|
       @rated_places << n if n.trip_points.where(place_type: "Destination").first
+    end
+
+    @rated_places.each do |place|
+      place.ratings.each do |r|
+        @comments << r.comment
+      end
     end
 
     nearby_origin.each do |n|
