@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   def dashboard
     @user_trips = @user.trips
-    # @user_favorites = @user.favorite_places
   end
 
   # GET /users/1
@@ -34,7 +33,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    # if @user.update(user_params)
     if @user.update(name: params[:name], password: params[:password], email: params[:email], max_distance: params[:max_distance], accessibility_type: params[:accessibility_type])
       render :json => {:success => true}
     else
