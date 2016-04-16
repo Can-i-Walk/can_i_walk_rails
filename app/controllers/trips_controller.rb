@@ -17,9 +17,6 @@ class TripsController < ApplicationController
   end
 
   def reject_trip
-    # user = User.find(params[:user_id])
-    # latest_trip = user.trips.last
-    # @trip = Trip.find(params[:id])
     @trip.completion = params[:completion]
     @trip.save
   end
