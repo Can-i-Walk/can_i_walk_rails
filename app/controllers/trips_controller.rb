@@ -17,9 +17,6 @@ class TripsController < ApplicationController
   end
 
   def reject_trip
-    # user = User.find(params[:user_id])
-    # latest_trip = user.trips.last
-    # @trip = Trip.find(params[:id])
     @trip.completion = params[:completion]
     @trip.save
   end
@@ -45,7 +42,6 @@ class TripsController < ApplicationController
     origin_lat = params[:latitude]
     origin_long = params[:longitude]
     @suggestion = Place.suggest_places(max_distance, origin_lat, origin_long)
-    render :json => {:success => false, :errors => ["No popular destinations nearby."]} unless @suggestion
   end
 
   # PATCH/PUT /trips/1
