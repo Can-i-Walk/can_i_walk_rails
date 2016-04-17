@@ -16,7 +16,7 @@ json.average_ratings do
   json.cane_accessibility @cane_average
   json.wheelchair_accessibility @wheelchair_average
   json.walker_accessibility @walker_average
-  json.scooter_accesibility @scooter_average
+  json.scooter_accessibility @scooter_average
   json.comments @comments
 end
 
