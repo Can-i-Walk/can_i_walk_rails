@@ -48,7 +48,7 @@ class PlacesController < ApplicationController
     nearby_origin = Place.nearby_places(radius, origin_lat, origin_long)
     nearby_destination = Place.nearby_places(radius, dest_lat, dest_long)
 
-    nearby_places = Place.close_places(sw_point, ne_point)
+    # nearby_places = Place.close_places(sw_point, ne_point)
 
     nearby_destination.each do |n|
       @rated_places << n if n.trip_points.where(place_type: "Destination").first
