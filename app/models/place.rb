@@ -15,9 +15,9 @@ class Place < ActiveRecord::Base
     within(radius, :origin => [origin_lat, origin_long])
   end
 
-  def self.close_places(sw_point, ne_point)
-    in_bounds([sw_point, ne_point)
-  end
+  # def self.close_places(sw_point, ne_point)
+  #   in_bounds([sw_point, ne_point)
+  # end
 
   def self.suggest_places(max_distance, origin_lat, origin_long)
     range = ((max_distance/3).round)..max_distance
