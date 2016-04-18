@@ -20,4 +20,10 @@ class Place < ActiveRecord::Base
     Place.in_range(range, :origin => [origin_lat, origin_long]).joins(:trip_points).where("place_type = 'Destination'")
   end
 
+  def self.midpoints(radius, origin_lat, origin_long, dest_lat, dest_long)
+    mid_lat = (origin_lat + dest_lat)/2
+    mid_long = (origin_long + dest_long)/2
+    within(radius, :origin=> [mid_lat, mid_long])
+  end
+
 end
