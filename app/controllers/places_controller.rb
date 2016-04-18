@@ -21,6 +21,9 @@ class PlacesController < ApplicationController
     dest_lat = params[:dest_lat]
     dest_long = params[:dest_long]
 
+    sw_point = [origin_lat, origin_long]
+    ne_point = [dest_lat, dest_long]
+
     @rated_places = []
     favorite_nearby_places = []
     all_comments = []
@@ -41,9 +44,11 @@ class PlacesController < ApplicationController
     @walker_average = Rating.average_walker(dest_lat, dest_long)
     @scooter_average = Rating.average_scooter(dest_lat, dest_long)
 
-    midpoints = Place.midpoints(mid_radius, origin_lat, origin_long, dest_lat, dest_long)
-    nearby_origin = Place.nearby_places(radius, origin_lat, origin_long)
-    nearby_destination = Place.nearby_places(radius, dest_lat, dest_long)
+    # midpoints = Place.midpoints(mid_radius, origin_lat, origin_long, dest_lat, dest_long)
+    # nearby_origin = Place.nearby_places(radius, origin_lat, origin_long)
+    # nearby_destination = Place.nearby_places(radius, dest_lat, dest_long)
+
+    nearby_places = Place.nearby_places(sw_point, ne_point)
 
     nearby_destination.each do |n|
       @rated_places << n if n.trip_points.where(place_type: "Destination").first
@@ -57,15 +62,19 @@ class PlacesController < ApplicationController
 
     @comments = all_comments.shuffle.take(5)
 
-    nearby_origin.each do |place|
-      favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
-    end
+    # nearby_origin.each do |place|
+    #   favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
+    # end
+    #
+    # nearby_destination.each do |place|
+    #   favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
+    # end
+    #
+    # midpoints.each do |place|
+    #   favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
+    # end
 
-    nearby_destination.each do |place|
-      favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
-    end
-
-    midpoints.each do |place|
+    nearby_places.each do |place|
       favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
     end
 

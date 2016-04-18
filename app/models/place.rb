@@ -11,8 +11,12 @@ class Place < ActiveRecord::Base
                    :lng_column_name => :longitude
 
 
-  def self.nearby_places(radius, origin_lat, origin_long)
-    within(radius, :origin => [origin_lat, origin_long])
+  # def self.nearby_places(radius, origin_lat, origin_long)
+  #   within(radius, :origin => [origin_lat, origin_long])
+  # end
+
+  def self.nearby_places(sw_point, ne_point)
+    in_bounds([sw_point, ne_point)
   end
 
   def self.suggest_places(max_distance, origin_lat, origin_long)
