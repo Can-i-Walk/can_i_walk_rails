@@ -11,7 +11,7 @@ class Place < ActiveRecord::Base
                    :lng_column_name => :longitude
 
 
-  def nearby_places(radius, origin_lat, origin_long)
+  def self.nearby_places(radius, origin_lat, origin_long)
     within(radius, :origin => [origin_lat, origin_long])
   end
 
