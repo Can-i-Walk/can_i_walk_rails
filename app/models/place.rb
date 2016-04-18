@@ -21,8 +21,8 @@ class Place < ActiveRecord::Base
   end
 
   def self.midpoints(radius, origin_lat, origin_long, dest_lat, dest_long)
-    mid_lat = (origin_lat + dest_lat)/2
-    mid_long = (origin_long + dest_long)/2
+    mid_lat = (origin_lat.to_f + dest_lat.to_f)/2
+    mid_long = (origin_long.to_f + dest_long.to_f)/2
     within(radius, :origin=> [mid_lat, mid_long])
   end
 
