@@ -11,11 +11,11 @@ class Place < ActiveRecord::Base
                    :lng_column_name => :longitude
 
 
-  # def self.nearby_places(radius, origin_lat, origin_long)
-  #   within(radius, :origin => [origin_lat, origin_long])
-  # end
+  def self.nearby_places(radius, origin_lat, origin_long)
+    within(radius, :origin => [origin_lat, origin_long])
+  end
 
-  def self.nearby_places(sw_point, ne_point)
+  def self.close_places(sw_point, ne_point)
     in_bounds([sw_point, ne_point)
   end
 
