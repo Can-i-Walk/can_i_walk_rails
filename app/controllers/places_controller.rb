@@ -21,7 +21,7 @@ class PlacesController < ApplicationController
     dest_long = params[:dest_long]
 
     @rated_places = []
-    @favorite_nearby_places = []
+    favorite_nearby_places = []
     all_comments = []
     radius = 0.33
     mid_radius = 0.33
@@ -52,16 +52,18 @@ class PlacesController < ApplicationController
     @comments = all_comments.shuffle.take(5)
 
     nearby_origin.each do |place|
-      @favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
+      favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
     end
 
     nearby_destination.each do |place|
-      @favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
+      favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
     end
 
     midpoints.each do |place|
-      @favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
+      favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
     end
+
+    @favorite_nearby_places = favorite_nearby_places.uniq
   end
 
   def places_of_interest
@@ -70,18 +72,27 @@ class PlacesController < ApplicationController
     dest_lat = params[:dest_lat]
     dest_long = params[:dest_long]
 
-    @favorite_nearby_places = []
+    favorite_nearby_places = []
+    radius = 0.33
+    mid_radius = 0.33
 
-    nearby_origin = Place.within(0.25, :origin => [origin_lat, origin_long])
-    nearby_destination = Place.within(0.25, :origin => [dest_lat, dest_long])
+    midpoints = Place.midpoints(mid_radius, origin_lat, origin_long, dest_lat, dest_long)
+    nearby_origin = Place.nearby_places(radius, origin_lat, origin_long)
+    nearby_destination = Place.nearby_places(radius, dest_lat, dest_long)
 
-    nearby_origin.each do |n|
-      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite").first
+    nearby_origin.each do |place|
+      favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
     end
 
-    nearby_destination.each do |n|
-      @favorite_nearby_places << n if n.trip_points.where(place_type: "Favorite").first
+    nearby_destination.each do |place|
+      favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
     end
+
+    midpoints.each do |place|
+      favorite_nearby_places << place if place.trip_points.where(place_type: "Favorite").first
+    end
+
+    @favorite_nearby_places = favorite_nearby_places.uniq
   end
 
   # POST /places
