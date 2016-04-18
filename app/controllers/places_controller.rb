@@ -27,6 +27,11 @@ class PlacesController < ApplicationController
     radius = 0.25
     mid_radius = distance.to_f/4
 
+    @alert = Alert.new(params[:dest_lat], params[:dest_long])
+    @astronomy = Astronomy.new(params[:dest_lat], params[:dest_long])
+    @condition = Condition.new(params[:dest_lat], params[:dest_long])
+    @hourly = Hourly.new(params[:dest_lat], params[:dest_long])
+
     @ease_average = Rating.ease_average(dest_lat, dest_long)
     @enjoyability_average = Rating.enjoyability_average(dest_lat, dest_long)
     @safety_average = Rating.safety_average(dest_lat, dest_long)
