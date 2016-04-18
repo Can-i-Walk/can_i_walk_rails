@@ -15,6 +15,7 @@ class PlacesController < ApplicationController
   end
 
   def map_info
+    distance = params[:distance]
     origin_lat = params[:origin_lat]
     origin_long = params[:origin_long]
     dest_lat = params[:dest_lat]
@@ -23,8 +24,8 @@ class PlacesController < ApplicationController
     @rated_places = []
     favorite_nearby_places = []
     all_comments = []
-    radius = 0.33
-    mid_radius = 0.33
+    radius = 0.25
+    mid_radius = distance.to_f/4
 
     @ease_average = Rating.ease_average(dest_lat, dest_long)
     @enjoyability_average = Rating.enjoyability_average(dest_lat, dest_long)
@@ -67,14 +68,15 @@ class PlacesController < ApplicationController
   end
 
   def places_of_interest
+    distance = params[:distance]
     origin_lat = params[:origin_lat]
     origin_long = params[:origin_long]
     dest_lat = params[:dest_lat]
     dest_long = params[:dest_long]
 
     favorite_nearby_places = []
-    radius = 0.33
-    mid_radius = 0.33
+    radius = 0.25
+    mid_radius = distance.to_f/4
 
     midpoints = Place.midpoints(mid_radius, origin_lat, origin_long, dest_lat, dest_long)
     nearby_origin = Place.nearby_places(radius, origin_lat, origin_long)
