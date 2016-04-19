@@ -92,7 +92,7 @@ User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "
 # user_id: 2
 User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Turmel", max_distance: 10.0, email_confirmed: true, accessibility_type: "Walker")
   # trip_id: 6
-  Trip.create!(user_id: 2, trip_name: "Duke Gardens", distance: 2.5)
+  Trip.create!(user_id: 2, trip_name: "Eno State Park", distance: 1.3)
     # place_id: 21
     Place.create!(user_id: 2, latitude: 36.062654, longitude: -78.997655, place_name: "Home")
       TripPoint.create!(place_id: 21, trip_id: 6, place_type: "Origin")
@@ -108,166 +108,166 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
       TripPoint.create!(place_id: 24, trip_id: 6, place_type: "Favorite")
 
   # trip_id: 7
-  Trip.create!(user_id: 2, trip_name: "Tylers Pub", distance: 0.5)
+  Trip.create!(user_id: 2, trip_name: "Mesa Latin Kitchen", distance: 0.9)
     # place_id: 25
-    Place.create!(user_id: 2, latitude: 35.992892, longitude: -78.904498, place_name: "The Iron Yard")
+    Place.create!(user_id: 2, latitude: 36.015756, longitude: -78.919211, place_name: "Joe Van Gogh Durham")
       TripPoint.create!(place_id: 25, trip_id: 7, place_type: "Origin")
     # place_id: 26
-    Place.create!(user_id: 2, latitude: 35.992592, longitude: -78.905567, place_name: "Tylers Pub")
+    Place.create!(user_id: 2, latitude: 36.011391, longitude: -78.930830, place_name: "Mesa Latin Kitchen")
       TripPoint.create!(place_id: 26, trip_id: 7, place_type: "Destination")
-      Rating.create!(user_id: 2, place_id: 6, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Cliche.")
+      Rating.create!(user_id: 2, place_id: 6, ease_rating: 4, safety_rating: 3, enjoyability_rating: 3, accessibility_rating: 3, comment: "Lots of construction along the way.")
     # place_id: 27
-    Place.create!(user_id: 2, latitude: 35.993378, longitude: -78.904955, place_name: "Water Tower")
+    Place.create!(user_id: 2, latitude: 36.009671, longitude: -78.922253, place_name: "Panera Bread")
       TripPoint.create!(place_id: 27, trip_id: 7, place_type: "Favorite")
     # place_id: 28
-    Place.create!(user_id: 2, latitude: 35.993167, longitude: -78.905677, place_name: "Bronto Software")
+    Place.create!(user_id: 2, latitude: 36.009949, longitude: -78.920386, place_name: "Heavenly Buffaloes")
       TripPoint.create!(place_id: 28, trip_id: 7, place_type: "Favorite")
 
   # trip_id: 8
-  Trip.create!(user_id: 2, trip_name: "Carolina Theatre", distance: 0.2)
+  Trip.create!(user_id: 2, trip_name: "Old Havana Sandwich Shop", distance: 1.0)
     # place_id: 29
-    Place.create!(user_id: 2, latitude: 35.992892, longitude: -78.904498, place_name: "The Iron Yard")
+    Place.create!(user_id: 2, latitude: 36.003343, longitude: -78.888400, place_name: "Speakeasy Coffee and Bar Incorporated")
       TripPoint.create!(place_id: 29, trip_id: 8, place_type: "Origin")
     # place_id: 30
-    Place.create!(user_id: 2, latitude: 35.997872, longitude: -78.902952, place_name: "Carolina Theatre")
+    Place.create!(user_id: 2, latitude: 35.993372, longitude: -78.898028, place_name: "Old Havana Sandwich Shop")
       TripPoint.create!(place_id: 30, trip_id: 8, place_type: "Destination")
-      Rating.create!(user_id: 2, place_id: 10, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Pretty cool movies.")
+      Rating.create!(user_id: 2, place_id: 10, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "A pretty part of the city you don't usually see.")
     # place_id: 31
-    Place.create!(user_id: 2, latitude: 35.993167, longitude: -78.905677, place_name: "Bronto Software")
+    Place.create!(user_id: 2, latitude: 36.002452, longitude: -78.889914, place_name: "Rocky Creek Park")
       TripPoint.create!(place_id: 31, trip_id: 8, place_type: "Favorite")
     # place_id: 32
-    Place.create!(user_id: 2, latitude: 35.997112, longitude: -78.903460, place_name: "Pizzeria Toro")
+    Place.create!(user_id: 2, latitude: 35.994903, longitude: -78.896511, place_name: "Durham County Library")
       TripPoint.create!(place_id: 32, trip_id: 8, place_type: "Favorite")
 
   # trip_id: 9
-  Trip.create!(user_id: 2, trip_name: "First Presbyterian Church", distance: 0.7)
+  Trip.create!(user_id: 2, trip_name: "Roses Meat Market and Sweet Shop", distance: 1.3)
     # place_id: 33
-    Place.create!(user_id: 2, latitude: 35.992892, longitude: -78.904498, place_name: "Surf Club")
+    Place.create!(user_id: 2, latitude: 36.004952, longitude: -78.891114, place_name: "Calvary United Methodist Church")
       TripPoint.create!(place_id: 33, trip_id: 9, place_type: "Origin")
     # place_id: 34
-    Place.create!(user_id: 2, latitude: 35.993838, longitude: -78.897821, place_name: "First Presbyterian Church")
+    Place.create!(user_id: 2, latitude: 36.000552, longitude: -78.909073, place_name: "Roses Meat Market and Sweet Shop")
       TripPoint.create!(place_id: 34, trip_id: 9, place_type: "Destination")
-      Rating.create!(user_id: 2, place_id: 14, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Divine.")
+      Rating.create!(user_id: 2, place_id: 14, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 4, comment: "A nice walk with quaint sights.")
     # place_id: 35
-    Place.create!(user_id: 2, latitude: 35.993146, longitude: -78.897525, place_name: "Durham Country Criminal Justice")
+    Place.create!(user_id: 2, latitude: 36.004835, longitude: -78.896659, place_name: "Bay-Hargrove Park")
       TripPoint.create!(place_id: 35, trip_id: 9, place_type: "Favorite")
     # place_id: 36
-    Place.create!(user_id: 2, latitude: 35.997112, longitude: -78.903460, place_name: "Old Havana")
+    Place.create!(user_id: 2, latitude: 36.004583, longitude: -78.899805, place_name: "Old North Durham Park")
       TripPoint.create!(place_id: 36, trip_id: 9, place_type: "Favorite")
 
   # trip_id: 10
-  Trip.create!(user_id: 2, trip_name: "Marcus E. Hill Attorney at Law", distance: 0.7)
+  Trip.create!(user_id: 2, trip_name: "Surf Club", distance: 1.5)
     # place_id: 37
-    Place.create!(user_id: 2, latitude: 35.992892, longitude: -78.904498, place_name: "The Iron Yard")
+    Place.create!(user_id: 2, latitude: 35.997006, longitude: -78.922164, place_name: "Duke University Apartments")
       TripPoint.create!(place_id: 37, trip_id: 10, place_type: "Origin")
     # place_id: 38
-    Place.create!(user_id: 2, latitude: 35.993498, longitude: -78.897518, place_name: "Marcus E. Hill Attorney at Law")
+    Place.create!(user_id: 2, latitude: 36.002153, longitude: -78.900073, place_name: "Surf Club")
       TripPoint.create!(place_id: 38, trip_id: 10, place_type: "Destination")
-      Rating.create!(user_id: 2, place_id: 18, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "They are all liars.")
+      Rating.create!(user_id: 2, place_id: 18, ease_rating: 3, safety_rating: 4, enjoyability_rating: 3, accessibility_rating: 4, comment: "Lots of interesting places around I didn't know about.")
     # place_id: 39
-    Place.create!(user_id: 2, latitude: 35.997112, longitude: -78.903460, place_name: "Old Havana")
+    Place.create!(user_id: 2, latitude: 35.997075, longitude: -78.915705, place_name: "Middle Eastern Food Market")
       TripPoint.create!(place_id: 39, trip_id: 10, place_type: "Favorite")
     # place_id: 40
-    Place.create!(user_id: 2, latitude: 35.992592, longitude: -78.905567, place_name: "Tylers Pub")
+    Place.create!(user_id: 2, latitude: 35.997075, longitude: -78.915705, place_name: "Beautiful Mural")
       TripPoint.create!(place_id: 40, trip_id: 10, place_type: "Favorite")
 
 
 # user_id: 3
 User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jeremy Smith", max_distance: 15.0, email_confirmed: true, accessibility_type: "Scooter")
   # trip_id: 11
-  Trip.create!(user_id: 3, trip_name: "Duke Gardens", distance: 2.5)
+  Trip.create!(user_id: 3, trip_name: "Duke Gardens", distance: 0.9)
     # place_id: 41
-    Place.create!(user_id: 3, latitude: 35.992892, longitude: -78.904498, place_name: "The Iron Yard")
+    Place.create!(user_id: 3, latitude: 35.991804, longitude: -78.904930, place_name: "Durham Bulls")
       TripPoint.create!(place_id: 41, trip_id: 11, place_type: "Origin")
     # place_id: 42
-    Place.create!(user_id: 3, latitude: 36.003633, longitude: -78.934175, place_name: "Duke Gardens")
+    Place.create!(user_id: 3, latitude: 36.003508, longitude: -78.900955, place_name: "Geer Street Garden")
       TripPoint.create!(place_id: 42, trip_id: 11, place_type: "Destination")
       Rating.create!(user_id: 3, place_id: 2, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Beautiful place.")
     # place_id: 43
-    Place.create!(user_id: 3, latitude: 36.003633, longitude: -78.934175, place_name: "Japanese Gardens")
+    Place.create!(user_id: 3, latitude: 35.995942, longitude: -78.902492, place_name: "Hidden Courtyard")
       TripPoint.create!(place_id: 43, trip_id: 11, place_type: "Favorite")
     # place_id: 44
-    Place.create!(user_id: 3, latitude: 35.992592, longitude: -78.905567, place_name: "Nasher Museum")
+    Place.create!(user_id: 3, latitude: 35.996005, longitude: -78.902287, place_name: "RUNWAY Store")
       TripPoint.create!(place_id: 44, trip_id: 11, place_type: "Favorite")
 
   # trip_id: 12
-  Trip.create!(user_id: 3, trip_name: "Tylers Pub", distance: 0.5)
+  Trip.create!(user_id: 3, trip_name: "Duke Chapel", distance: 2.6)
     # place_id: 45
-    Place.create!(user_id: 3, latitude: 35.992892, longitude: -78.904498, place_name: "The Iron Yard")
+    Place.create!(user_id: 3, latitude: 36.000148, longitude: -78.898993, place_name: "Home")
       TripPoint.create!(place_id: 45, trip_id: 12, place_type: "Origin")
     # place_id: 46
-    Place.create!(user_id: 3, latitude: 35.992592, longitude: -78.905567, place_name: "Tylers Pub")
+    Place.create!(user_id: 3, latitude: 36.001674, longitude: -78.939861, place_name: "Duke Chapel")
       TripPoint.create!(place_id: 46, trip_id: 12, place_type: "Destination")
-      Rating.create!(user_id: 3, place_id: 6, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Cliche.")
+      Rating.create!(user_id: 3, place_id: 6, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Gorgeous surroundings.")
     # place_id: 47
-    Place.create!(user_id: 3, latitude: 35.993378, longitude: -78.904955, place_name: "Water Tower")
+    Place.create!(user_id: 3, latitude: 35.996975, longitude: -78.903608, place_name: "Pizzeria Toro")
       TripPoint.create!(place_id: 47, trip_id: 12, place_type: "Favorite")
     # place_id: 48
-    Place.create!(user_id: 3, latitude: 35.993167, longitude: -78.905677, place_name: "Bronto Software")
+    Place.create!(user_id: 3, latitude: 35.996564, longitude: -78.915550, place_name: "Masjid Ar-Razzaq")
       TripPoint.create!(place_id: 48, trip_id: 12, place_type: "Favorite")
 
   # trip_id: 13
-  Trip.create!(user_id: 3, trip_name: "Carolina Theatre", distance: 0.2)
+  Trip.create!(user_id: 3, trip_name: "Durham Co-op Market", distance: 1.6)
     # place_id: 49
-    Place.create!(user_id: 3, latitude: 35.992892, longitude: -78.904498, place_name: "The Iron Yard")
+    Place.create!(user_id: 3, latitude: 35.983592, longitude: -78.933847, place_name: "Anderson Apartments")
       TripPoint.create!(place_id: 49, trip_id: 13, place_type: "Origin")
     # place_id: 50
-    Place.create!(user_id: 3, latitude: 35.997872, longitude: -78.902952, place_name: "Carolina Theatre")
+    Place.create!(user_id: 3, latitude: 35.996639, longitude: -78.916649, place_name: "Durham Co-op Market")
       TripPoint.create!(place_id: 50, trip_id: 13, place_type: "Destination")
       Rating.create!(user_id: 3, place_id: 10, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Pretty cool movies.")
     # place_id: 51
-    Place.create!(user_id: 3, latitude: 35.993167, longitude: -78.905677, place_name: "Bronto Software")
+    Place.create!(user_id: 3, latitude: 35.986548, longitude: -78.932346, place_name: "Park")
       TripPoint.create!(place_id: 51, trip_id: 13, place_type: "Favorite")
     # place_id: 52
-    Place.create!(user_id: 3, latitude: 35.997112, longitude: -78.903460, place_name: "Pizzeria Toro")
+    Place.create!(user_id: 3, latitude: 35.987049, longitude: -78.926560, place_name: "Flower Shop")
       TripPoint.create!(place_id: 52, trip_id: 13, place_type: "Favorite")
 
   # trip_id: 14
-  Trip.create!(user_id: 3, trip_name: "First Presbyterian Church", distance: 0.7)
+  Trip.create!(user_id: 3, trip_name: "Forest Hills Park", distance: 1.6)
     # place_id: 53
-    Place.create!(user_id: 3, latitude: 35.992892, longitude: -78.904498, place_name: "Surf Club")
+    Place.create!(user_id: 3, latitude: 35.995006, longitude: -78.927768, place_name: "Maplewood Cemetary")
       TripPoint.create!(place_id: 53, trip_id: 14, place_type: "Origin")
     # place_id: 54
-    Place.create!(user_id: 3, latitude: 35.993838, longitude: -78.897821, place_name: "First Presbyterian Church")
+    Place.create!(user_id: 3, latitude: 35.980978, longitude: -78.916312, place_name: "Forest Hills Park")
       TripPoint.create!(place_id: 54, trip_id: 14, place_type: "Destination")
-      Rating.create!(user_id: 3, place_id: 14, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Divine.")
+      Rating.create!(user_id: 3, place_id: 14, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Beautiful scenery.")
     # place_id: 55
-    Place.create!(user_id: 3, latitude: 35.993146, longitude: -78.897525, place_name: "Durham Country Criminal Justice")
+    Place.create!(user_id: 3, latitude: 35.984997, longitude: -78.922187, place_name: "Super Cool House")
       TripPoint.create!(place_id: 55, trip_id: 14, place_type: "Favorite")
     # place_id: 56
-    Place.create!(user_id: 3, latitude: 35.997112, longitude: -78.903460, place_name: "Old Havana")
+    Place.create!(user_id: 3, latitude: 35.992646, longitude: -78.916418, place_name: "Pauli Murray Center")
       TripPoint.create!(place_id: 56, trip_id: 14, place_type: "Favorite")
 
   # trip_id: 15
-  Trip.create!(user_id: 3, trip_name: "Marcus E. Hill Attorney at Law", distance: 0.7)
+  Trip.create!(user_id: 3, trip_name: "Parizade", distance: 1.2)
     # place_id: 57
-    Place.create!(user_id: 3, latitude: 35.992892, longitude: -78.904498, place_name: "The Iron Yard")
+    Place.create!(user_id: 3, latitude: 36.008799, longitude: -78.910305, place_name: "Home")
       TripPoint.create!(place_id: 57, trip_id: 15, place_type: "Origin")
     # place_id: 58
-    Place.create!(user_id: 3, latitude: 35.993498, longitude: -78.897518, place_name: "Marcus E. Hill Attorney at Law")
+    Place.create!(user_id: 3, latitude: 36.007601, longitude: -78.926430, place_name: "Parizade")
       TripPoint.create!(place_id: 58, trip_id: 15, place_type: "Destination")
-      Rating.create!(user_id: 3, place_id: 18, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "They are all liars.")
+      Rating.create!(user_id: 3, place_id: 18, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Beautiful walk through Duke campus. Worth the detour.")
     # place_id: 59
-    Place.create!(user_id: 3, latitude: 35.997112, longitude: -78.903460, place_name: "Old Havana")
+    Place.create!(user_id: 3, latitude: 36.005397, longitude: -78.922450, place_name: "Sams Quik Shop")
       TripPoint.create!(place_id: 59, trip_id: 15, place_type: "Favorite")
     # place_id: 60
-    Place.create!(user_id: 3, latitude: 35.992592, longitude: -78.905567, place_name: "Tylers Pub")
+    Place.create!(user_id: 3, latitude: 36.006551, longitude: -78.913255, place_name: "Duke Coffee Shop")
       TripPoint.create!(place_id: 60, trip_id: 15, place_type: "Favorite")
 
 
 # user_id: 4
 User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Daniel Buompane", max_distance: 8.0, email_confirmed: true, accessibility_type: "Wheelchair")
   # trip_id: 16
-  Trip.create!(user_id: 4, trip_name: "Duke Gardens", distance: 2.5)
+  Trip.create!(user_id: 4, trip_name: "Duke Gardens", distance: 1.2)
     # place_id: 61
-    Place.create!(user_id: 4, latitude: 35.992892, longitude: -78.904498, place_name: "The Iron Yard")
+    Place.create!(user_id: 4, latitude: 36.003243, longitude: -78.905423, place_name: "Bullington Warehouse")
       TripPoint.create!(place_id: 61, trip_id: 16, place_type: "Origin")
     # place_id: 62
-    Place.create!(user_id: 4, latitude: 36.003633, longitude: -78.934175, place_name: "Duke Gardens")
+    Place.create!(user_id: 4, latitude: 36.018650, longitude: -78.911323, place_name: "Northgate Mall")
       TripPoint.create!(place_id: 62, trip_id: 16, place_type: "Destination")
       Rating.create!(user_id: 4, place_id: 2, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Beautiful place.")
     # place_id: 63
-    Place.create!(user_id: 4, latitude: 36.003633, longitude: -78.934175, place_name: "Japanese Gardens")
+    Place.create!(user_id: 4, latitude: 36.007480, longitude: -78.903670, place_name: "Ellerbe Creek Trail")
       TripPoint.create!(place_id: 63, trip_id: 16, place_type: "Favorite")
     # place_id: 64
     Place.create!(user_id: 4, latitude: 35.992592, longitude: -78.905567, place_name: "Nasher Museum")
