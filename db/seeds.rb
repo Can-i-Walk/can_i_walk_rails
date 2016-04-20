@@ -9,7 +9,7 @@
 # user_id: 1
 User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "Geoff Arnold", max_distance: 5.0, email_confirmed: true, accessibility_type: "Cane")
   # trip_id: 1
-  Trip.create!(user_id: 1, trip_name: "Sarah P. Duke Gardens", distance: 1.4)
+  Trip.create!(user_id: 1, trip_name: "Sarah P. Duke Gardens", distance: 1.4, walked_at: 5.day.ago, completion: true)
     # place_id: 1
     Place.create!(user_id: 1, latitude: 36.007088, longitude: -78.916113, place_name: "Duke East Campus")
       TripPoint.create!(place_id: 1, trip_id: 1, place_type: "Origin")
@@ -25,7 +25,7 @@ User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "
       TripPoint.create!(place_id: 4, trip_id: 1, place_type: "Favorite")
 
   # trip_id: 2
-  Trip.create!(user_id: 1, trip_name: "Cocoa Cinnamon", distance: 0.8)
+  Trip.create!(user_id: 1, trip_name: "Cocoa Cinnamon", distance: 0.8, walked_at: 4.day.ago, completion: true)
     # place_id: 5
     Place.create!(user_id: 1, latitude: 35.993279, longitude: -78.902309, place_name: "Durham Performing Arts Center")
       TripPoint.create!(place_id: 5, trip_id: 2, place_type: "Origin")
@@ -41,7 +41,7 @@ User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "
       TripPoint.create!(place_id: 8, trip_id: 2, place_type: "Favorite")
 
   # trip_id: 3
-  Trip.create!(user_id: 1, trip_name: "Carolina Theatre", distance: 0.5)
+  Trip.create!(user_id: 1, trip_name: "Carolina Theatre", distance: 0.5, walked_at: 3.day.ago, completion: true)
     # place_id: 9
     Place.create!(user_id: 1, latitude: 35.993002, longitude: -78.904412, place_name: "The Iron Yard")
       TripPoint.create!(place_id: 9, trip_id: 3, place_type: "Origin")
@@ -57,7 +57,7 @@ User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "
       TripPoint.create!(place_id: 12, trip_id: 3, place_type: "Favorite")
 
   # trip_id: 4
-  Trip.create!(user_id: 1, trip_name: "Whole Foods", distance: 0.7)
+  Trip.create!(user_id: 1, trip_name: "Whole Foods", distance: 0.7, walked_at: 2.day.ago, completion: true)
     # place_id: 13
     Place.create!(user_id: 1, latitude: 36.016771, longitude: -78.920597, place_name: "Home")
       TripPoint.create!(place_id: 13, trip_id: 4, place_type: "Origin")
@@ -73,7 +73,7 @@ User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "
       TripPoint.create!(place_id: 16, trip_id: 4, place_type: "Favorite")
 
   # trip_id: 5
-  Trip.create!(user_id: 1, trip_name: "Museum of Life and Science", distance: 1.0)
+  Trip.create!(user_id: 1, trip_name: "Museum of Life and Science", distance: 1.0, walked_at: 1.day.ago, completion: true)
     # place_id: 17
     Place.create!(user_id: 1, latitude: 36.023752, longitude: -78.900853, place_name: "Home")
       TripPoint.create!(place_id: 17, trip_id: 5, place_type: "Origin")
@@ -92,7 +92,7 @@ User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "
 # user_id: 2
 User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Turmel", max_distance: 10.0, email_confirmed: true, accessibility_type: "Walker")
   # trip_id: 6
-  Trip.create!(user_id: 2, trip_name: "Eno State Park", distance: 1.3)
+  Trip.create!(user_id: 2, trip_name: "Eno State Park", distance: 1.3, walked_at: 5.day.ago, completion: true)
     # place_id: 21
     Place.create!(user_id: 2, latitude: 36.062654, longitude: -78.997655, place_name: "Home")
       TripPoint.create!(place_id: 21, trip_id: 6, place_type: "Origin")
@@ -108,7 +108,7 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
       TripPoint.create!(place_id: 24, trip_id: 6, place_type: "Favorite")
 
   # trip_id: 7
-  Trip.create!(user_id: 2, trip_name: "Mesa Latin Kitchen", distance: 0.9)
+  Trip.create!(user_id: 2, trip_name: "Mesa Latin Kitchen", distance: 0.9, walked_at: 4.day.ago, completion: true)
     # place_id: 25
     Place.create!(user_id: 2, latitude: 36.015756, longitude: -78.919211, place_name: "Joe Van Gogh Durham")
       TripPoint.create!(place_id: 25, trip_id: 7, place_type: "Origin")
@@ -124,7 +124,7 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
       TripPoint.create!(place_id: 28, trip_id: 7, place_type: "Favorite")
 
   # trip_id: 8
-  Trip.create!(user_id: 2, trip_name: "Old Havana Sandwich Shop", distance: 1.0)
+  Trip.create!(user_id: 2, trip_name: "Old Havana Sandwich Shop", distance: 1.0, walked_at: 3.day.ago, completion: true)
     # place_id: 29
     Place.create!(user_id: 2, latitude: 36.003343, longitude: -78.888400, place_name: "Speakeasy Coffee and Bar Incorporated")
       TripPoint.create!(place_id: 29, trip_id: 8, place_type: "Origin")
@@ -140,7 +140,7 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
       TripPoint.create!(place_id: 32, trip_id: 8, place_type: "Favorite")
 
   # trip_id: 9
-  Trip.create!(user_id: 2, trip_name: "Roses Meat Market and Sweet Shop", distance: 1.3)
+  Trip.create!(user_id: 2, trip_name: "Roses Meat Market and Sweet Shop", distance: 1.3, walked_at: 2.day.ago, completion: true)
     # place_id: 33
     Place.create!(user_id: 2, latitude: 36.004952, longitude: -78.891114, place_name: "Calvary United Methodist Church")
       TripPoint.create!(place_id: 33, trip_id: 9, place_type: "Origin")
@@ -156,7 +156,7 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
       TripPoint.create!(place_id: 36, trip_id: 9, place_type: "Favorite")
 
   # trip_id: 10
-  Trip.create!(user_id: 2, trip_name: "Surf Club", distance: 1.5)
+  Trip.create!(user_id: 2, trip_name: "Surf Club", distance: 1.5, walked_at: 1.day.ago, completion: true)
     # place_id: 37
     Place.create!(user_id: 2, latitude: 35.997006, longitude: -78.922164, place_name: "Duke University Apartments")
       TripPoint.create!(place_id: 37, trip_id: 10, place_type: "Origin")
@@ -175,7 +175,7 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
 # user_id: 3
 User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jeremy Smith", max_distance: 15.0, email_confirmed: true, accessibility_type: "Scooter")
   # trip_id: 11
-  Trip.create!(user_id: 3, trip_name: "Duke Gardens", distance: 0.9)
+  Trip.create!(user_id: 3, trip_name: "Duke Gardens", distance: 0.9, walked_at: 5.day.ago, completion: true)
     # place_id: 41
     Place.create!(user_id: 3, latitude: 35.991804, longitude: -78.904930, place_name: "Durham Bulls")
       TripPoint.create!(place_id: 41, trip_id: 11, place_type: "Origin")
@@ -191,7 +191,7 @@ User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jerem
       TripPoint.create!(place_id: 44, trip_id: 11, place_type: "Favorite")
 
   # trip_id: 12
-  Trip.create!(user_id: 3, trip_name: "Duke Chapel", distance: 2.6)
+  Trip.create!(user_id: 3, trip_name: "Duke Chapel", distance: 2.6, walked_at: 4.day.ago, completion: true)
     # place_id: 45
     Place.create!(user_id: 3, latitude: 36.000148, longitude: -78.898993, place_name: "Home")
       TripPoint.create!(place_id: 45, trip_id: 12, place_type: "Origin")
@@ -207,7 +207,7 @@ User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jerem
       TripPoint.create!(place_id: 48, trip_id: 12, place_type: "Favorite")
 
   # trip_id: 13
-  Trip.create!(user_id: 3, trip_name: "Durham Co-op Market", distance: 1.6)
+  Trip.create!(user_id: 3, trip_name: "Durham Co-op Market", distance: 1.6, walked_at: 3.day.ago, completion: true)
     # place_id: 49
     Place.create!(user_id: 3, latitude: 35.983592, longitude: -78.933847, place_name: "Anderson Apartments")
       TripPoint.create!(place_id: 49, trip_id: 13, place_type: "Origin")
@@ -223,7 +223,7 @@ User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jerem
       TripPoint.create!(place_id: 52, trip_id: 13, place_type: "Favorite")
 
   # trip_id: 14
-  Trip.create!(user_id: 3, trip_name: "Forest Hills Park", distance: 1.6)
+  Trip.create!(user_id: 3, trip_name: "Forest Hills Park", distance: 1.6, walked_at: 2.day.ago, completion: true)
     # place_id: 53
     Place.create!(user_id: 3, latitude: 35.995006, longitude: -78.927768, place_name: "Maplewood Cemetary")
       TripPoint.create!(place_id: 53, trip_id: 14, place_type: "Origin")
@@ -239,7 +239,7 @@ User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jerem
       TripPoint.create!(place_id: 56, trip_id: 14, place_type: "Favorite")
 
   # trip_id: 15
-  Trip.create!(user_id: 3, trip_name: "Parizade", distance: 1.2)
+  Trip.create!(user_id: 3, trip_name: "Parizade", distance: 1.2, walked_at: 1.day.ago, completion: true)
     # place_id: 57
     Place.create!(user_id: 3, latitude: 36.008799, longitude: -78.910305, place_name: "Home")
       TripPoint.create!(place_id: 57, trip_id: 15, place_type: "Origin")
@@ -258,7 +258,7 @@ User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jerem
 # user_id: 4
 User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Daniel Buompane", max_distance: 8.0, email_confirmed: true, accessibility_type: "Wheelchair")
   # trip_id: 16
-  Trip.create!(user_id: 4, trip_name: "Northgate Mall", distance: 1.2)
+  Trip.create!(user_id: 4, trip_name: "Northgate Mall", distance: 1.2, walked_at: 5.day.ago, completion: true)
     # place_id: 61
     Place.create!(user_id: 4, latitude: 36.003243, longitude: -78.905423, place_name: "Bullington Warehouse")
       TripPoint.create!(place_id: 61, trip_id: 16, place_type: "Origin")
@@ -274,7 +274,7 @@ User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Dan
       TripPoint.create!(place_id: 64, trip_id: 16, place_type: "Favorite")
 
   # trip_id: 17
-  Trip.create!(user_id: 4, trip_name: "Tylers Pub", distance: 0.5)
+  Trip.create!(user_id: 4, trip_name: "Tylers Pub", distance: 0.5, walked_at: 4.day.ago, completion: true)
     # place_id: 65
     Place.create!(user_id: 4, latitude: 36.009914, longitude: -78.899652, place_name: "Home")
       TripPoint.create!(place_id: 65, trip_id: 17, place_type: "Origin")
@@ -290,7 +290,7 @@ User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Dan
       TripPoint.create!(place_id: 68, trip_id: 17, place_type: "Favorite")
 
   # trip_id: 18
-  Trip.create!(user_id: 4, trip_name: "Triangle Brewing Co", distance: 1.2)
+  Trip.create!(user_id: 4, trip_name: "Triangle Brewing Co", distance: 1.2, walked_at: 3.day.ago, completion: true)
     # place_id: 69
     Place.create!(user_id: 4, latitude: 35.996487, longitude: -78.906851, place_name: "Durham Transit Station")
       TripPoint.create!(place_id: 69, trip_id: 18, place_type: "Origin")
@@ -306,7 +306,7 @@ User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Dan
       TripPoint.create!(place_id: 72, trip_id: 18, place_type: "Favorite")
 
   # trip_id: 19
-  Trip.create!(user_id: 4, trip_name: "The Federal", distance: 1.3)
+  Trip.create!(user_id: 4, trip_name: "The Federal", distance: 1.3, walked_at: 2.day.ago, completion: true)
     # place_id: 73
     Place.create!(user_id: 4, latitude: 36.005792, longitude: -78.929133, place_name: "Duke Central Campus")
       TripPoint.create!(place_id: 73, trip_id: 19, place_type: "Origin")
@@ -322,7 +322,7 @@ User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Dan
       TripPoint.create!(place_id: 76, trip_id: 19, place_type: "Favorite")
 
   # trip_id: 20
-  Trip.create!(user_id: 4, trip_name: "Durham Farmers Market", distance: 0.6)
+  Trip.create!(user_id: 4, trip_name: "Durham Farmers Market", distance: 0.6, walked_at: 1.day.ago, completion: true)
     # place_id: 77
     Place.create!(user_id: 4, latitude: 36.002589, longitude: -78.895517, place_name: "Glendale Apartments")
       TripPoint.create!(place_id: 77, trip_id: 20, place_type: "Origin")
@@ -341,7 +341,7 @@ User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Dan
 # user_id: 5
 User.create!(email: "damekim1206@gmail.com", password: "password", name: "Da-Me Kim", max_distance: 4.0, email_confirmed: true, accessibility_type: "Wheelchair")
   # trip_id: 21
-  Trip.create!(user_id: 5, trip_name: "Mateo Bar de Tapas", distance: 0.8)
+  Trip.create!(user_id: 5, trip_name: "Mateo Bar de Tapas", distance: 0.8, walked_at: 5.day.ago, completion: true)
     # place_id: 81
     Place.create!(user_id: 5, latitude: 35.999856, longitude: -78.893667, place_name: "Union Baptist Church")
       TripPoint.create!(place_id: 81, trip_id: 21, place_type: "Origin")
@@ -357,7 +357,7 @@ User.create!(email: "damekim1206@gmail.com", password: "password", name: "Da-Me 
       TripPoint.create!(place_id: 84, trip_id: 21, place_type: "Favorite")
 
   # trip_id: 22
-  Trip.create!(user_id: 5, trip_name: "Tylers Pub", distance: 0.5)
+  Trip.create!(user_id: 5, trip_name: "Tylers Pub", distance: 0.5, walked_at: 4.day.ago, completion: true)
     # place_id: 85
     Place.create!(user_id: 5, latitude: 35.995624, longitude: -78.901937, place_name: "American Underground @Main")
       TripPoint.create!(place_id: 85, trip_id: 22, place_type: "Origin")
@@ -373,7 +373,7 @@ User.create!(email: "damekim1206@gmail.com", password: "password", name: "Da-Me 
       TripPoint.create!(place_id: 88, trip_id: 22, place_type: "Favorite")
 
   # trip_id: 23
-  Trip.create!(user_id: 5, trip_name: "Durham Yoga Company", distance: 0.6)
+  Trip.create!(user_id: 5, trip_name: "Durham Yoga Company", distance: 0.6, walked_at: 3.day.ago, completion: true)
     # place_id: 89
     Place.create!(user_id: 5, latitude: 36.005244, longitude: -78.904989, place_name: "Duke Tower Suites")
       TripPoint.create!(place_id: 89, trip_id: 23, place_type: "Origin")
@@ -389,7 +389,7 @@ User.create!(email: "damekim1206@gmail.com", password: "password", name: "Da-Me 
       TripPoint.create!(place_id: 92, trip_id: 23, place_type: "Favorite")
 
   # trip_id: 24
-  Trip.create!(user_id: 5, trip_name: "First Presbyterian Church", distance: 0.7)
+  Trip.create!(user_id: 5, trip_name: "First Presbyterian Church", distance: 0.7, walked_at: 2.day.ago, completion: true)
     # place_id: 93
     Place.create!(user_id: 5, latitude: 36.017407, longitude: -78.914131, place_name: "Walltown Program Site Center")
       TripPoint.create!(place_id: 93, trip_id: 24, place_type: "Origin")
@@ -405,7 +405,7 @@ User.create!(email: "damekim1206@gmail.com", password: "password", name: "Da-Me 
       TripPoint.create!(place_id: 96, trip_id: 24, place_type: "Favorite")
 
   # trip_id: 25
-  Trip.create!(user_id: 5, trip_name: "Center for Documentary Studies", distance: 1.1)
+  Trip.create!(user_id: 5, trip_name: "Center for Documentary Studies", distance: 1.1, walked_at: 1.day.ago, completion: true)
     # place_id: 97
     Place.create!(user_id: 5, latitude: 36.017980, longitude: -78.920893, place_name: "School of Science and Math")
       TripPoint.create!(place_id: 97, trip_id: 25, place_type: "Origin")
