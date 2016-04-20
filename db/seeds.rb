@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # user_id: 1
-User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "Geoff Arnold", max_distance: 5.0, email_confirmed: true, accessibility_type: "Cane")
+User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "Geoff Arnold", max_distance: 1.5, email_confirmed: true, accessibility_type: "Cane")
   # trip_id: 1
   Trip.create!(user_id: 1, trip_name: "Sarah P. Duke Gardens", distance: 1.4, walked_at: 5.day.ago, completion: true)
     # place_id: 1
