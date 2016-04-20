@@ -99,7 +99,7 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
     # place_id: 22
     Place.create!(user_id: 2, latitude: 36.079641, longitude: -79.004246, place_name: "Eno State Park")
       TripPoint.create!(place_id: 22, trip_id: 6, place_type: "Destination")
-      Rating.create!(user_id: 2, place_id: 2, ease_rating: 3, safety_rating: 5, enjoyability_rating: 5, accessibility_rating: 1, comment: "Beautiful landscape.")
+      Rating.create!(user_id: 2, place_id: 22, ease_rating: 3, safety_rating: 5, enjoyability_rating: 5, accessibility_rating: 1, comment: "Beautiful landscape.")
     # place_id: 23
     Place.create!(user_id: 2, latitude: 36.084062, longitude: -79.008563, place_name: "Amazing Trail")
       TripPoint.create!(place_id: 23, trip_id: 6, place_type: "Favorite")
@@ -115,7 +115,7 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
     # place_id: 26
     Place.create!(user_id: 2, latitude: 36.011391, longitude: -78.930830, place_name: "Mesa Latin Kitchen")
       TripPoint.create!(place_id: 26, trip_id: 7, place_type: "Destination")
-      Rating.create!(user_id: 2, place_id: 6, ease_rating: 4, safety_rating: 3, enjoyability_rating: 3, accessibility_rating: 3, comment: "Lots of construction along the way.")
+      Rating.create!(user_id: 2, place_id: 26, ease_rating: 4, safety_rating: 3, enjoyability_rating: 3, accessibility_rating: 3, comment: "Lots of construction along the way.")
     # place_id: 27
     Place.create!(user_id: 2, latitude: 36.009671, longitude: -78.922253, place_name: "Panera Bread")
       TripPoint.create!(place_id: 27, trip_id: 7, place_type: "Favorite")
@@ -131,7 +131,7 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
     # place_id: 30
     Place.create!(user_id: 2, latitude: 35.993372, longitude: -78.898028, place_name: "Old Havana Sandwich Shop")
       TripPoint.create!(place_id: 30, trip_id: 8, place_type: "Destination")
-      Rating.create!(user_id: 2, place_id: 10, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "A pretty part of the city you don't usually see.")
+      Rating.create!(user_id: 2, place_id: 30, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "A pretty part of the city you don't usually see.")
     # place_id: 31
     Place.create!(user_id: 2, latitude: 36.002452, longitude: -78.889914, place_name: "Rocky Creek Park")
       TripPoint.create!(place_id: 31, trip_id: 8, place_type: "Favorite")
@@ -147,7 +147,7 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
     # place_id: 34
     Place.create!(user_id: 2, latitude: 36.000552, longitude: -78.909073, place_name: "Roses Meat Market and Sweet Shop")
       TripPoint.create!(place_id: 34, trip_id: 9, place_type: "Destination")
-      Rating.create!(user_id: 2, place_id: 14, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 4, comment: "A nice walk with quaint sights.")
+      Rating.create!(user_id: 2, place_id: 34, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 4, comment: "A nice walk with quaint sights.")
     # place_id: 35
     Place.create!(user_id: 2, latitude: 36.004835, longitude: -78.896659, place_name: "Bay-Hargrove Park")
       TripPoint.create!(place_id: 35, trip_id: 9, place_type: "Favorite")
@@ -163,7 +163,7 @@ User.create!(email: "gregturmel@gmail.com", password: "password", name: "Greg Tu
     # place_id: 38
     Place.create!(user_id: 2, latitude: 36.002153, longitude: -78.900073, place_name: "Surf Club")
       TripPoint.create!(place_id: 38, trip_id: 10, place_type: "Destination")
-      Rating.create!(user_id: 2, place_id: 18, ease_rating: 3, safety_rating: 4, enjoyability_rating: 3, accessibility_rating: 4, comment: "Lots of interesting places around I didn't know about.")
+      Rating.create!(user_id: 2, place_id: 38, ease_rating: 3, safety_rating: 4, enjoyability_rating: 3, accessibility_rating: 4, comment: "Lots of interesting places around I didn't know about.")
     # place_id: 39
     Place.create!(user_id: 2, latitude: 35.997075, longitude: -78.915705, place_name: "Middle Eastern Food Market")
       TripPoint.create!(place_id: 39, trip_id: 10, place_type: "Favorite")
@@ -182,7 +182,7 @@ User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jerem
     # place_id: 42
     Place.create!(user_id: 3, latitude: 36.003508, longitude: -78.900955, place_name: "Geer Street Garden")
       TripPoint.create!(place_id: 42, trip_id: 11, place_type: "Destination")
-      Rating.create!(user_id: 3, place_id: 2, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Beautiful place.")
+      Rating.create!(user_id: 3, place_id: 42, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Beautiful place.")
     # place_id: 43
     Place.create!(user_id: 3, latitude: 35.995942, longitude: -78.902492, place_name: "Hidden Courtyard")
       TripPoint.create!(place_id: 43, trip_id: 11, place_type: "Favorite")
@@ -198,7 +198,7 @@ User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jerem
     # place_id: 46
     Place.create!(user_id: 3, latitude: 36.001674, longitude: -78.939861, place_name: "Duke Chapel")
       TripPoint.create!(place_id: 46, trip_id: 12, place_type: "Destination")
-      Rating.create!(user_id: 3, place_id: 6, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Gorgeous surroundings.")
+      Rating.create!(user_id: 3, place_id: 46, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Gorgeous surroundings.")
     # place_id: 47
     Place.create!(user_id: 3, latitude: 35.996975, longitude: -78.903608, place_name: "Pizzeria Toro")
       TripPoint.create!(place_id: 47, trip_id: 12, place_type: "Favorite")
@@ -214,7 +214,7 @@ User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jerem
     # place_id: 50
     Place.create!(user_id: 3, latitude: 35.996639, longitude: -78.916649, place_name: "Durham Co-op Market")
       TripPoint.create!(place_id: 50, trip_id: 13, place_type: "Destination")
-      Rating.create!(user_id: 3, place_id: 10, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Nice quiet walk surrounded by forest.")
+      Rating.create!(user_id: 3, place_id: 50, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Nice quiet walk surrounded by forest.")
     # place_id: 51
     Place.create!(user_id: 3, latitude: 35.986548, longitude: -78.932346, place_name: "Park")
       TripPoint.create!(place_id: 51, trip_id: 13, place_type: "Favorite")
@@ -230,7 +230,7 @@ User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jerem
     # place_id: 54
     Place.create!(user_id: 3, latitude: 35.980978, longitude: -78.916312, place_name: "Forest Hills Park")
       TripPoint.create!(place_id: 54, trip_id: 14, place_type: "Destination")
-      Rating.create!(user_id: 3, place_id: 14, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Lots of fun places around.")
+      Rating.create!(user_id: 3, place_id: 54, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Lots of fun places around.")
     # place_id: 55
     Place.create!(user_id: 3, latitude: 35.984997, longitude: -78.922187, place_name: "Super Cool House")
       TripPoint.create!(place_id: 55, trip_id: 14, place_type: "Favorite")
@@ -246,7 +246,7 @@ User.create!(email: "smithjeremym@gmail.com", password: "password", name: "Jerem
     # place_id: 58
     Place.create!(user_id: 3, latitude: 36.007601, longitude: -78.926430, place_name: "Parizade")
       TripPoint.create!(place_id: 58, trip_id: 15, place_type: "Destination")
-      Rating.create!(user_id: 3, place_id: 18, ease_rating: 5, safety_rating: 4, enjoyability_rating: 3, accessibility_rating: 5, comment: "Mostly commercial surroundings.")
+      Rating.create!(user_id: 3, place_id: 58, ease_rating: 5, safety_rating: 4, enjoyability_rating: 3, accessibility_rating: 5, comment: "Mostly commercial surroundings.")
     # place_id: 59
     Place.create!(user_id: 3, latitude: 36.005397, longitude: -78.922450, place_name: "Sams Quik Shop")
       TripPoint.create!(place_id: 59, trip_id: 15, place_type: "Favorite")
@@ -265,7 +265,7 @@ User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Dan
     # place_id: 62
     Place.create!(user_id: 4, latitude: 36.018650, longitude: -78.911323, place_name: "Northgate Mall")
       TripPoint.create!(place_id: 62, trip_id: 16, place_type: "Destination")
-      Rating.create!(user_id: 4, place_id: 2, ease_rating: 5, safety_rating: 4, enjoyability_rating: 1, accessibility_rating: 2, comment: "Lots of traffic.")
+      Rating.create!(user_id: 4, place_id: 62, ease_rating: 5, safety_rating: 4, enjoyability_rating: 1, accessibility_rating: 2, comment: "Lots of traffic.")
     # place_id: 63
     Place.create!(user_id: 4, latitude: 36.007480, longitude: -78.903670, place_name: "Ellerbe Creek Trail")
       TripPoint.create!(place_id: 63, trip_id: 16, place_type: "Favorite")
@@ -281,7 +281,7 @@ User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Dan
     # place_id: 66
     Place.create!(user_id: 4, latitude: 35.995615, longitude: -78.900641, place_name: "Loaf Bakery")
       TripPoint.create!(place_id: 66, trip_id: 17, place_type: "Destination")
-      Rating.create!(user_id: 4, place_id: 6, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Lovely downtown life.")
+      Rating.create!(user_id: 4, place_id: 66, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Lovely downtown life.")
     # place_id: 67
     Place.create!(user_id: 4, latitude: 35.996741, longitude: -78.901467, place_name: "Courtyard Chess Tables")
       TripPoint.create!(place_id: 67, trip_id: 17, place_type: "Favorite")
@@ -297,7 +297,7 @@ User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Dan
     # place_id: 70
     Place.create!(user_id: 4, latitude: 35.996765, longitude: -78.889245, place_name: "Triangle Brewing Co")
       TripPoint.create!(place_id: 70, trip_id: 18, place_type: "Destination")
-      Rating.create!(user_id: 4, place_id: 10, ease_rating: 3, safety_rating: 5, enjoyability_rating: 3, accessibility_rating: 2, comment: "Lots of hidden gems around.")
+      Rating.create!(user_id: 4, place_id: 70, ease_rating: 3, safety_rating: 5, enjoyability_rating: 3, accessibility_rating: 2, comment: "Lots of hidden gems around.")
     # place_id: 71
     Place.create!(user_id: 4, latitude: 35.995506, longitude: -78.890221, place_name: "Seeds Neighborhood Garden")
       TripPoint.create!(place_id: 71, trip_id: 18, place_type: "Favorite")
@@ -313,7 +313,7 @@ User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Dan
     # place_id: 74
     Place.create!(user_id: 4, latitude: 36.000629, longitude: -78.910035, place_name: "The Federal")
       TripPoint.create!(place_id: 74, trip_id: 19, place_type: "Destination")
-      Rating.create!(user_id: 4, place_id: 14, ease_rating: 3, safety_rating: 1, enjoyability_rating: 5, accessibility_rating: 2, comment: "Lots of nightlife.")
+      Rating.create!(user_id: 4, place_id: 74, ease_rating: 3, safety_rating: 1, enjoyability_rating: 5, accessibility_rating: 2, comment: "Lots of nightlife.")
     # place_id: 75
     Place.create!(user_id: 4, latitude: 36.000746, longitude: -78.910740, place_name: "The Social")
       TripPoint.create!(place_id: 75, trip_id: 19, place_type: "Favorite")
@@ -329,7 +329,7 @@ User.create!(email: "danielbuompane@gmail.com", password: "password", name: "Dan
     # place_id: 78
     Place.create!(user_id: 4, latitude: 36.000306, longitude: -78.901890, place_name: "Durham Farmers Market")
       TripPoint.create!(place_id: 78, trip_id: 20, place_type: "Destination")
-      Rating.create!(user_id: 4, place_id: 18, ease_rating: 1, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Tons to do around here.")
+      Rating.create!(user_id: 4, place_id: 78, ease_rating: 1, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Tons to do around here.")
     # place_id: 79
     Place.create!(user_id: 4, latitude: 35.999447, longitude: -78.901729, place_name: "Piedmont")
       TripPoint.create!(place_id: 79, trip_id: 20, place_type: "Favorite")
@@ -348,7 +348,7 @@ User.create!(email: "damekim1206@gmail.com", password: "password", name: "Da-Me 
     # place_id: 82
     Place.create!(user_id: 5, latitude: 35.996879, longitude: -78.904793, place_name: "Mateo Bar de Tapas")
       TripPoint.create!(place_id: 82, trip_id: 21, place_type: "Destination")
-      Rating.create!(user_id: 5, place_id: 2, ease_rating: 3, safety_rating: 2, enjoyability_rating: 2, accessibility_rating: 5, comment: "Cool places you could miss otherwise.")
+      Rating.create!(user_id: 5, place_id: 82, ease_rating: 3, safety_rating: 2, enjoyability_rating: 2, accessibility_rating: 5, comment: "Cool places you could miss otherwise.")
     # place_id: 83
     Place.create!(user_id: 5, latitude: 35.999986, longitude: -78.896269, place_name: "Saltbox Seafood Joint")
       TripPoint.create!(place_id: 83, trip_id: 21, place_type: "Favorite")
@@ -364,7 +364,7 @@ User.create!(email: "damekim1206@gmail.com", password: "password", name: "Da-Me 
     # place_id: 86
     Place.create!(user_id: 5, latitude: 35.996857, longitude: -78.895548, place_name: "Downtown Durham Dog Park")
       TripPoint.create!(place_id: 86, trip_id: 22, place_type: "Destination")
-      Rating.create!(user_id: 5, place_id: 6, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Some really beautiful architecture.")
+      Rating.create!(user_id: 5, place_id: 86, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Some really beautiful architecture.")
     # place_id: 87
     Place.create!(user_id: 5, latitude: 35.995715, longitude: -78.898573, place_name: "Church Courtyard")
       TripPoint.create!(place_id: 87, trip_id: 22, place_type: "Favorite")
@@ -380,7 +380,7 @@ User.create!(email: "damekim1206@gmail.com", password: "password", name: "Da-Me 
     # place_id: 90
     Place.create!(user_id: 5, latitude: 36.000080, longitude: -78.899612, place_name: "Durham Yoga Company")
       TripPoint.create!(place_id: 90, trip_id: 23, place_type: "Destination")
-      Rating.create!(user_id: 5, place_id: 10, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Really crowded on the weekend.")
+      Rating.create!(user_id: 5, place_id: 90, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "Really crowded on the weekend.")
     # place_id: 91
     Place.create!(user_id: 5, latitude: 36.000757, longitude: -78.900803, place_name: "Park")
       TripPoint.create!(place_id: 91, trip_id: 23, place_type: "Favorite")
@@ -396,7 +396,7 @@ User.create!(email: "damekim1206@gmail.com", password: "password", name: "Da-Me 
     # place_id: 94
     Place.create!(user_id: 5, latitude: 36.013784, longitude: -78.921534, place_name: "Monuts Donuts")
       TripPoint.create!(place_id: 94, trip_id: 24, place_type: "Destination")
-      Rating.create!(user_id: 5, place_id: 14, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "This area is like a second downtown.")
+      Rating.create!(user_id: 5, place_id: 94, ease_rating: 3, safety_rating: 4, enjoyability_rating: 5, accessibility_rating: 2, comment: "This area is like a second downtown.")
     # place_id: 95
     Place.create!(user_id: 5, latitude: 36.013420, longitude: -78.918326, place_name: "House with Chicken Coop")
       TripPoint.create!(place_id: 95, trip_id: 24, place_type: "Favorite")
@@ -412,7 +412,7 @@ User.create!(email: "damekim1206@gmail.com", password: "password", name: "Da-Me 
     # place_id: 98
     Place.create!(user_id: 5, latitude: 36.004183, longitude: -78.918132, place_name: "Center for Documentary Studies")
       TripPoint.create!(place_id: 98, trip_id: 25, place_type: "Destination")
-      Rating.create!(user_id: 5, place_id: 18, ease_rating: 1, safety_rating: 1, enjoyability_rating: 2, accessibility_rating: 4, comment: "Not too much to see.")
+      Rating.create!(user_id: 5, place_id: 98, ease_rating: 1, safety_rating: 1, enjoyability_rating: 2, accessibility_rating: 4, comment: "Not too much to see.")
     # place_id: 99
     Place.create!(user_id: 5, latitude: 36.009337, longitude: -78.919849, place_name: "Yoga Patio")
       TripPoint.create!(place_id: 99, trip_id: 25, place_type: "Favorite")
