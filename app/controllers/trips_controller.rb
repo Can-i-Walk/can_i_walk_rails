@@ -41,7 +41,9 @@ class TripsController < ApplicationController
     max_distance = params[:max_distance].to_f
     origin_lat = params[:latitude]
     origin_long = params[:longitude]
-    @suggestion = Place.suggest_places(max_distance, origin_lat, origin_long)
+    destinations = Place.suggest_places(max_distance, origin_lat, origin_long)
+    @suggestions = destinations.shuffle.take(6)
+    # destinations.map(&:place_name).uniq.shuffle.take(6)
   end
 
   # PATCH/PUT /trips/1
