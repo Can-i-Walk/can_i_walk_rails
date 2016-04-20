@@ -78,7 +78,7 @@ User.create!(email: "geoffrey.s.arnold@gmail.com", password: "password", name: "
     Place.create!(user_id: 1, latitude: 36.023752, longitude: -78.900853, place_name: "Home")
       TripPoint.create!(place_id: 17, trip_id: 5, place_type: "Origin")
     # place_id: 18
-    Place.create!(user_id: 1, latitude: 36.029106, longitude: -78.899572, place_name: "Museum of Life and Science")
+    Place.create!(user_id: 1, latitude: 36.032669, longitude: -78.900937, place_name: "Rock Quarry Park")
       TripPoint.create!(place_id: 18, trip_id: 5, place_type: "Destination")
       Rating.create!(user_id: 1, place_id: 18, ease_rating: 4, safety_rating: 4, enjoyability_rating: 4, accessibility_rating: 2, comment: "Pleasant walk through the neighborhood. Sidewalks need repair.")
     # place_id: 19
