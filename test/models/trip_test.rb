@@ -9,7 +9,7 @@ class TripTest < ActiveSupport::TestCase
     trip = trips(:chicago)
     trip.finish
     trip.walked_now
-    assert_equal trip.completion, true
-    assert_equal trip.walked_at, Time.now
+    assert_equal true, trip.completion
+    assert_equal Time.now.day, trip.walked_at.day
   end
 end
