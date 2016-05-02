@@ -72,4 +72,9 @@ class UserTest < ActiveSupport::TestCase
     assert_equal user.trip_points.find_by(place_type: "Destination").place.place_name, duke_gardens.place_name
     assert_equal user.ratings.find_by(place: "duke"), duke_gardens.ratings.find_by(place: "duke")
   end
+
+  test "find specific users favorite places" do
+    user = users(:geoff)
+    assert_equal user.favorite_places.first, places(:japanese) 
+  end
 end
