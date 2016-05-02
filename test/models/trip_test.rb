@@ -9,7 +9,6 @@ class TripTest < ActiveSupport::TestCase
     trip = trips(:chicago)
     trip.finish
     trip.walked_now
-    byebug
     assert_equal trip.completion, true
     assert_equal trip.walked_at, Time.now
   end
