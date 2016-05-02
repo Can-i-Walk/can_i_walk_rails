@@ -14,3 +14,13 @@ japanese:
   latitude: 36.003633
   longitude: -78.904498
   place_name: "Japanese Gardens"
+
+nasher:
+  latitude: 36.003623
+  longitude: -78.904488
+  place_name: "Nasher Museum"
+
+toro:
+  latitude: 35.992882
+  longitude: -78.904488
+  place_name: "Pizzeria Toro"
